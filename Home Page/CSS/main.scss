@@ -1,0 +1,1299 @@
+// MEDIA QUERIES
+
+$mediaqsm: 576px;
+$mediaqmd: 768px;
+$mediaqlg: 992px;
+$mediaqxl: 1200px;
+
+@mixin mediasm {
+    @media (min-width: #{$mediaqsm}) {
+        @content;
+    }
+}
+@mixin mediamd {
+    @media (min-width: #{$mediaqmd}) {
+        @content;
+    }
+}
+@mixin medialg {
+    @media (min-width: #{$mediaqlg}) {
+        @content;
+    }
+}
+@mixin mediaxl {
+    @media (min-width: #{$mediaqxl}) {
+        @content;
+    }
+}
+
+// MEDIA QUERIES END
+// -------------------------------------------------------------------------------
+// VARIABLES
+
+$nav_margin_top: 100px;
+// forgot to i had this one. its used in 
+// the nav tho like the name entails
+
+// $main_green: #96c2a9;
+$main_green: #76af8f;
+$main_gray: #a8a8a8;
+$main_blue: #b4cbed;
+
+
+// VARIABLES END
+// -------------------------------------------------------------------------------
+// CLASSES
+
+.reserve_cta{
+// THE COMMON CTA BUTTON
+    border: 3px $main_blue solid;
+    color: white;
+    background: $main_green;
+    // $main_gray_lighten: lighten($color: $maingray, $amount: 50);
+    // background: transparentize($color: $main_gray_lighten, $amount: 2);
+    // width: 10rem;
+    // min-height: 5rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: .75rem 1rem;
+    border-radius: 50rem;
+    display: inline-block;
+    
+    &:hover{
+        border-color: $main_green;
+        color: $main_green;
+        background: white;
+    }
+
+} // THE COMMON CTA BUTTON
+// more editing in various places
+
+.pop_service{
+    // the popular service cards
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 450px;
+    min-width: 300px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: .5rem;
+    position: relative;
+    height: 575px;
+    min-height: 575px;
+    max-height: 575px;
+    // box-shadow: 4px 4px 10px -2px #96c2a9;
+    // box-shadow: 0px 0px 20px 0px #4a7b9f;
+    box-shadow: 5px 5px 20px -5px #4a7b9f;
+
+    img{
+        display: block;
+        width: 100%;
+        border-top-left-radius: .5rem;
+        border-top-right-radius: .5rem;
+        // height: 40%;
+        height: 40%;
+        min-height: 40%;
+        max-height: 40%;
+    }
+
+    .pop_serve_outer_in{
+    // Div for non-img part of service
+        height: 60%;
+        min-height: 60%;
+        max-height: 60%;        
+
+        // .pop_serve_innie_in{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 1rem;
+            color: #4a7b9f;
+
+            h3{
+                text-align: left;
+                // margin-bottom: .5rem;
+                color: #4a7b9f !important;
+                font-family: "contrail one", cursive;
+                font-size: 175% !important;
+                margin: .5rem 0 1rem !important;
+            }
+
+            p{
+                text-align: left;
+                // color:white;
+                text-overflow: ellipsis;
+                font-family: "nunito", sans-serif;
+                line-height: 1.5;
+                font-size: 105%;
+                margin: 0;
+            }
+
+            a{
+                margin:auto 0 2rem auto;
+                align-self: flex-end;
+                background: saturate($color: $main_green, $amount: 35);
+                border-color: saturate($color: $main_green, $amount: 35);
+                color: white;
+                // background: $main_green;
+                // border: $main_green;
+                // position: relative;
+                // bottom: 15px;
+                // right: 15px;
+                // width: 35%;
+                // color: adjust-color($color: $main_blue, $red: 1, $green: 2, $blue: 3, $hue: 0, $saturation: 10%, $lightness: 100%, $alpha: 1.0)
+
+                &:hover{
+                    background: none;
+                    color: saturate($color: #479DCC, $amount: 0);
+                    border-color: #479DCC;
+                }
+            }
+
+            // .reserve_cta{
+            //     // background: ;
+            // }
+        // }
+    } // End of outer div
+
+    // &:nth-child(2){
+    //     background: $main_green;
+
+    //     a{
+    //         background: $main_blue;
+
+    //         &:hover{
+    //             background:white;
+    //         }
+    //     }
+    // }
+    &:last-child{
+        grid-column: 1 / -1;
+        // centers the one item in the last row
+
+        @include medialg{
+            grid-column: auto;
+        }
+    }
+
+} // end of pop service
+// in html of #pop_services_section
+
+.tha_review{
+    background: saturate($color: $main_green, $amount: 20);
+    border-radius: .75rem;
+    width: 300px;
+    padding: 1rem .5rem 2.5rem;
+    color: white;
+    font-weight: 600;
+    margin: 3rem 1.5rem;
+    position: relative;
+
+    svg{
+        border-radius: 50%;
+        background: $main_blue;
+        padding: .75rem;
+        font-size: 150%;
+        margin: 0 .5rem .5rem 0;
+        float: left;
+    } //svg affects the i tag with font awesome classes
+
+    p{
+        line-height: 1.5;
+        padding: 0;
+        font-style: italic;
+        // letter-spacing: .1rem;
+        // text-align: justify;
+        font-size: 125%;
+    }
+
+    i{
+        text-align: right;
+        width: 95%;
+        text-align: right;
+        display: inline-block;
+        margin-right: 2rem;
+        position: absolute;
+        bottom: 10px;
+        z-index: 5;
+        right: -5px;
+        font-size: 175%;
+        font-family: "contrail one", cursive;
+        font-weight: 100;
+    } // affects regular i tag only because 
+    //font awesome turns it into an svg tag
+    // puts its at the bottom
+} // end of tha_review
+// in html of #testimony_section
+
+.social_icons{
+    padding: 0 0 2rem 0;
+    display: flex; 
+    justify-content: center;
+
+    a{
+        margin: 0 .5rem;
+
+        svg{
+            font-size: 200%;
+            color: darken($color: $main_blue, $amount: 10)
+           ;
+
+            &:hover{
+                color: $main_green;
+            }
+        }
+    }
+} // end social icons
+// more editing in various places
+
+// .logo_pic{ 
+// // a tag with h1 in it for nav
+//     background: url(https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/12804727_1565271077123258_7939033995396338047_n.jpg?_nc_cat=110&_nc_oc=AQn6PnblnouAnZae6NZqkLh-OhpJw_00dBqrd-cAe365B459kF-jc4MOi-L_c59raig&_nc_ht=scontent-lga3-1.xx&oh=edebce218864ca230fd30f38addd59a6&oe=5DF7C4B2);
+//     background-size: contain;
+//     background-position: center;
+//     height: 50px;
+//     min-width: 150px;
+//     background-repeat: no-repeat;
+//     margin: 0 auto;
+//     transform: scale(2);
+
+//     // img{
+//     //     display: inline-block;
+//     //     height: 50px;
+//     // }
+
+//     // h1{
+//     //     text-decoration: none;
+//     //     font-size: 1.5rem;
+
+//     //     @include mediamd{
+//     //         margin: 0;
+//     //         margin-top: -.5rem;
+//     //         margin-bottom: 1rem;
+//     //     }
+
+//     //     @include mediaxl{
+//     //         margin: 0;
+//     //         margin-left: 3rem;
+//     //     }
+//     // }
+// } // the same logo in nav but from scratch
+// in footer only for now
+
+.logo_container{
+    display: inline-flex;
+    align-self: flex-start;
+    width: 100%;
+    border-bottom: 1px solid white;
+    text-decoration: none;
+
+    @include mediamd{
+        border: none;
+        align-self: center;
+        width: auto;
+    }
+
+    .logo_in_gray{
+        border-left: solid .45rem #666;
+        border-right: solid .4rem #666;
+        border-bottom: solid .3rem #666;
+        border-top: solid .3rem #666;
+        display: inline-flex;
+        align-items: center;
+        height: 60px;
+        width: 50px;
+        padding-right: .25rem;
+        margin-right: .2rem;
+
+        .logo_spa{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 500;
+
+            p{
+                margin: 1px 0;
+                padding: 0 0 0 .25rem;
+                color: #666;
+            }
+        }
+        // -----------------
+        .logo_q{
+            font-size: 400%;
+            margin: 0px;
+            margin-left: -.1rem;
+            color: #006c61;
+            font-family: 'Kaushan Script', cursive;
+            padding: 0px;
+        }
+    } // end of whats in the gray
+
+    .logo_uatros{
+        color: #006c61;
+        font-size: 300%;
+        font-family: script;
+        margin: .75rem 0;
+    }
+} // end of logo
+
+.foot_nav{
+// used twice in the footer for the "list"
+    display: flex;
+    flex-direction: column;
+
+    a{
+        display: inline-flex;
+        color: white;
+        text-decoration: none;
+        padding: .5rem 0; 
+        font-size: 115%;
+        align-items: center;
+
+        svg{
+            margin-right: .5rem;
+            min-width: 20px;
+            max-width: 20px;
+            height: auto;
+        }
+    }
+} // end of foot_nav
+// where else? but more specifically
+// #footer_connect, #pop_footures
+
+// CLASSES END 
+// -------------------------------------------------------------------------------
+// nav and header in body
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 390px;
+    overflow-x: hidden;
+
+    nav{
+        background: rgba($color: $main-gray, $alpha: .4);
+        height: $nav_margin_top;
+        width: 100%;
+        position: fixed;
+        margin: 0;
+        padding: 0;
+        // display: flex;
+        // justify-content: space-around;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        text-align: center;
+        z-index: 80;
+        font-weight: 600;
+
+        @include mediasm{
+           grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @include mediamd{
+            display: flex;
+            justify-content: center;
+        }
+
+        @include mediaxl{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            width: 100%;
+        }
+
+        #hamburger_section{
+            position: relative;
+            display: inline-block;
+            justify-self: start;
+
+            @include mediamd{
+                display: none;
+            }
+
+            &:hover{
+                
+                #hamburger{
+                    // background: #ccc
+
+                    svg{
+                        transform: rotate(90deg);
+                        color: black;
+                    }
+                }
+
+                article{
+                    display: block;
+
+                    a{
+                        animation: burger_dropdown 1s ease 0s 1 normal both;
+
+                        @keyframes burger_dropdown {
+                            0%{
+                                width: 0%;
+                            }
+
+                            100%{
+                                width: 200%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #hamburger{ 
+                padding: 1rem;
+                height: 1rem;
+                width: 1rem; 
+                color: #f2d4b6;
+                font-size: 2rem;
+                margin-left: 1rem;
+
+                svg{
+                    transition: ease transform 1s;
+                }
+            }
+            
+            // the container of the dropdown links
+            article{
+                display: none;
+                position: absolute;
+                min-width: 160px;
+                // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 100;
+                margin-left: 2rem;
+                // margin-top: 1rem;
+                    
+                // the dropdown links
+                a{
+                    padding: 16px;
+                    text-decoration: none;
+                    display: block;  
+                    // background: white;
+                    // color: $main_blue;
+                    // border: white solid 1px;
+                    // background: transparent;
+                    color: white;
+                    width: 200%;
+                    background: rgba(30, 30, 30, .7);
+                    font-style: italic;
+                    font-family: 'nunito';
+                    letter-spacing: .1rem;
+                    font-size: 135%;
+                    text-align: left;
+                    white-space: nowrap;
+    
+                    &:hover{
+                        background-color: white;
+                        color: rgba(30, 30, 30, .7);
+                        text-decoration: underline 1px solid;
+                    }
+    
+                    &::nth-child(2){
+                        border: 1px solid white;
+                        border-right: none;
+                        border-left: none;
+                    }
+                }
+            }
+        } // END OF #HAMBURGER_SECTION
+
+        #logo_and_links{
+            display: flex;
+            flex-direction: column;
+            justify-self: end; 
+            width: 100%;
+            text-align: right;
+            margin-right: 0;
+            
+            
+            @include mediasm{
+                justify-self: center;
+                text-align: center;
+            }
+
+            @include mediaxl{
+                flex-direction: row; 
+                justify-content: flex-start;
+            }
+
+            // .logo_pic{
+            //     z-index: -10;
+            // }
+
+            .logo_container{
+                margin-left: 2rem;
+                margin-right: 1.5rem;
+                border-bottom: none;
+                align-items: center;
+                transform: skew(-15deg) rotateY(5deg);
+                // box-shadow: 25px 20px 20px -20px rgba(0, 0, 0, 0.5);
+                
+                @include mediamd{
+                    // margin-top: 1.5rem;
+                    transform: scale(0.8) skew(-15deg) rotateY(5deg);
+                }
+
+                @include mediaxl{
+                    transform: scale(1) skew(-15deg) rotateY(5deg);
+                }
+
+                .logo_uatros {
+                    // color: darken($color:#96c2a9, $amount: 10);
+                    color: $main_green;
+                    margin: 0;
+                    text-shadow: 1px 1px 2px lighten($color: $main_gray, $amount: 10);
+                }
+
+                .logo_in_gray{
+                    border-left: solid .45rem $main_gray;
+                    border-right: solid .4rem $main_gray;
+                    border-bottom: solid .3rem $main_gray;
+                    border-top: solid .3rem $main_gray;
+                    // box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+
+                    .logo_q{
+                        // color: darken($color: $main_green, $amount: 10);
+                        color: $main_green;
+                        font-size: 275%;
+                        padding-bottom: .5rem;
+                        text-shadow: 1px 1px 3px lighten($color: $main_gray, $amount: 10);
+                    }
+
+                    .logo_spa{
+
+                        p{
+                            // color: #b4cbed;
+                            color: #479DCC;
+                            text-shadow: 0px 0px 1px white;
+                        }
+                      }
+                }
+            }
+  
+            // links under or next to the logo in desktop
+            article{
+                display: none;
+
+                @include mediamd{
+                    display: flex;
+                    justify-content: center;
+                    
+                    a{
+                        margin: 0 1rem;
+                        text-decoration: none;
+                        color: white;
+                        font-size: 115%;
+
+                        &:hover{
+                            // color: $main_blue;
+                            // font-size: 120%;
+                            // text-decoration: underline;
+                            border-bottom: white 1px solid;
+                        }
+                    }
+                }
+
+                @include mediaxl{
+                    align-items: center;
+
+                    a{
+                        margin-left: 6rem;
+                    }
+                }
+                
+            }
+        } // END OF #logo_and_links. *CAPITAL LETTERS TO GRAB ATTN
+
+        #cta_nav_section{
+            display: none;
+
+            a{
+                background: transparent;
+                border: white solid 1px;
+                white-space: nowrap;
+
+                &:hover{
+                    text-decoration: underline solid currentColor 1px;
+                    box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.8);
+                    color: white !important;
+                }
+            }
+
+            @include mediasm{
+                display: block;
+                margin-right: 2rem;
+                justify-self: end;
+            }
+
+            @include mediamd{
+                display: none;
+            }
+
+            @include mediaxl{
+                display: block;
+            }
+        } //end cta nav section
+
+    } // END OF THE NAV TAG
+
+    #fixed_up{
+        position: fixed;
+        bottom: 10%;
+        right: 5%;
+        font-size: 200%;
+        z-index: 100;
+        color: rgba($color: $main_gray, $alpha: .5);
+
+        &:hover{
+            color: rgba($color: $main_gray, $alpha: 0.85);
+            // z-index: -100; an annoying idea
+        }
+    } //end of fixed up
+
+    header{
+        // padding-top: $nav_margin_top;
+        // BASICALLY JUST A BACKGROUND IMAGE
+        #first_img{
+            width: 100%;
+            height: 55vh;
+            background-image: url(https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/44392206_2152131651770528_1881851452729589760_o.jpg?_nc_cat=107&_nc_oc=AQmw6uEAxhFutvaPJlJJ7t6LiPXKGsp81SZugpkXQbLHfC1Qe4RFBOqNCDgbcEFg6qg&_nc_ht=scontent-lga3-1.xx&oh=471181003bf6a80990a2607972dc4ecd&oe=5E05CB98);
+            background-size: cover;
+            background-position: center center;
+
+            @include mediasm{
+                height: 70vh;
+            }
+            
+            @include mediamd{
+                height: 85vh;
+                background-attachment: fixed;
+            }
+        }
+    } // END OF THE HEADER TAG
+} // body "end"
+
+main{
+    text-align: center;
+
+    #opening_section{
+        // background: darken($color: #8ce6a2, $amount: 10);
+        // background: linear-gradient(180deg, darken($color: #8ce6a2, $amount: 10) 0%, rgba(187,210,244,1) 80%); 
+        background: rgb(255,237,164);
+        background: linear-gradient(180deg, rgba(255, 237, 164, 0.6) 0%, #f2d4b6 30%, #bbd2f4 80%);
+        padding-bottom: 2.75rem;
+
+        h2{
+            text-transform: capitalize;
+            margin: 0;
+            color: darken($color: #bbd2f4, $amount: 10);
+            font-weight: 200;
+            padding: 2rem;
+            padding-bottom: 0;
+            font-family: 'Mina', sans-serif;
+
+            span{
+                padding: 0.25rem 0;
+                display: inline-block;
+                width: 100%;
+                font-size: 200%;
+                line-height: 1.15;
+
+                @include mediamd{
+                    padding: 0;
+                    font-size: 250%;
+                }
+            } //span
+        } //h2
+
+        .reserve_cta{
+            // background: saturate($color: $main_green, $amount: 20);
+            border-color: transparent;
+            // background: #f96d64;
+            background: saturate($color: $main_green, $amount: 35);
+
+            &:hover{
+                background: transparent;
+                // border-color: saturate($color: $main_green, $amount: 20);
+                // color: saturate($color: $main_green, $amount: 20);
+                // border-color: #f96d64;
+                border-color: saturate($color: $main_green, $amount: 35);
+                color: white;
+                text-shadow: saturate($color: $main_green, $amount: 35) 1px 0 10px;
+            }
+        }
+
+        p{
+            padding: 2rem;
+            max-width: $mediaqsm;
+            margin: 0 auto;
+            // color: darken($color: saturate($color: $main_blue, $amount: 30), $amount: 50);
+            color: #4a7b9f;
+            font-size: 150%;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.4;
+        } // p ended
+    } //end of #opening section
+
+    #pop_services_section{
+        background: rgb(187,210,244);
+        background: linear-gradient(180deg, rgba(187,210,244,1) 0%, rgba(255,255,255,1) 50%); 
+        // Check Classes up top to see more 
+        // of how the elements were affected
+
+        h2{
+            // color: #2EA3A3;
+            color: #4a7b9f;
+            font-family: 'Kaushan Script', sans-serif;
+            font-size: 300%;
+            margin: 0;
+            padding: 2rem 0;
+        }
+
+        // .pop_service inside here but not really doe
+        #pop_services_div{
+            display: grid;
+            
+            @include mediamd{
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+
+            @include medialg{
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+            }
+        } //end of pop serve div
+
+        h3{
+            font-size: 150%;
+            color: #4a7b9f;
+            margin-bottom: 0;
+            padding: 0;
+            font-family: 'roboto', sans-serif;
+            font-style: italic;
+            text-transform: capitalize;
+
+            &:last-child{
+                padding: 0 1rem;
+            }
+
+            a{
+                margin: 1rem 0 2.5rem;
+                background: none;
+                border: 2px solid saturate($color: #4a7b9f, $amount: 10);
+                color: saturate($color: #4a7b9f, $amount: 10);
+                font-family: Arial, Helvetica, sans-serif;
+                font-style: normal;
+                font-weight: 500;
+
+                &:hover{
+                    box-shadow: 0px 0px 1px 1px saturate($color: #4a7b9f, $amount: 10);
+                    font-weight: 600;
+                }
+            }
+        } //end of h3
+    } //end of # pop serve section
+
+    #about_us_cta_section{
+        background: url(https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/12790908_1565707950412904_1102429874649594246_n.jpg?_nc_cat=101&_nc_oc=AQmm0CAQWLji9Cm_QXo8hnRbj2BJQC4xC7ONN56Aogq5e3F3VcSs_XoaCRBy37azQus&_nc_ht=scontent-lga3-1.xx&oh=a9660f253780274ff9e8e0f8a3e1812a&oe=5DC8383E);
+        background-size: cover;
+        background-position: center center;
+        height: 55vh;
+
+        @include mediasm{
+            height: 70vh;
+        }
+        
+        @include mediamd{
+            height: 85vh;
+            width: 50%;
+            float: right;
+            position: relative;
+        } // made it side by side. image right, text left in article
+
+        article{
+            height: 100%;
+            width: 100%;
+            background: rgba($color: $main_blue, $alpha: .8);
+            display: flex;
+            // hovers over picture
+
+            @include mediamd{
+                position: relative;
+                right: 100%;
+                float: left;
+                background: transparent;
+                border-top: 1px solid $main_blue;
+                border-bottom: 1px solid $main_blue;
+                border-bottom-right-radius: .5rem;
+            } // puts it to left of picture
+
+            div{
+            // alignment
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                padding: 3rem;
+                color: lighten($color: rgb(255,237,164), $amount: 10);
+                margin: 0 auto;
+                text-shadow: 2px 1px 1px $main_gray;
+
+                @include mediamd{
+                    color: #4a7b9f;
+                    text-shadow: none;
+                }
+
+                h2{
+                    // font-size: 200%;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    font-family: 'Kaushan Script', sans-serif;
+                    font-size: 300%;
+                    font-style: normal;
+                    line-height: 1.25;
+                }
+
+                p{
+                    font-weight: 700;
+                    margin: 1rem 0;
+                    padding: 0 1rem;
+                    font-family: 'Nunito', sans-serif;
+                    font-size: 135%;
+                    // color: #587070;
+                }
+
+                a{
+                    // width: 150px;
+                    // margin: 0 auto;
+                    font-size: 125%;
+                    font-style: italic;
+                    // font-family: 'Nunito', sans-serif;
+                    font-family: 'Mina', sans-serif;
+                    // font-family: 'Contrail One', cursive;
+                    // font-family: 'Roboto', sans-serif;
+                    text-align: right;
+                    text-transform: capitalize;
+                    // text-decoration: none;
+                    // color: lighten($color: #76af8f, $amount: 30);
+                    // color: #61718C;
+                    color: white;
+                    // text-shadow: 0px 0px 3px white;
+                    font-weight: 600;
+                    // color: #587070;
+                    // border-bottom: 1px $main_blue solid;
+
+                    &:hover{
+                        // text-shadow: 0px 0px 2px rgba(230, 230, 230, 0.9);
+                        // stroke: $main_green;
+                        // stroke-width: 1px;
+                        color: #4a7b9f;
+                    }
+
+                    @include mediamd{
+                        color: $main_green;
+                    }
+                }
+            } //end of div
+        }// end of article
+    } //end of about us section
+
+    #testimony_section{
+        // background-color: lighten($color: $main_gray, $amount: 20);
+        // background: rgb(255,255,255);
+        // background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(187,210,244,1) 70%, rgba(255,237,164,1) 100%); 
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(187,210,244,1) 80%); 
+        clear: both;
+        color: darken($color: $main_blue, $amount: 15);
+
+        h2{
+            margin: 0;
+            margin-bottom: -0.5rem;
+            padding: 2rem 0 0 0;
+            color: #4a7b9f;
+            font-family: 'Kaushan Script', sans-serif;
+            font-size: 300%;
+        }
+
+        // .tha_review is inside here but like no
+        #reviews_div{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 0 1rem;
+        }
+
+        #simple_p{
+            font-weight: 600;
+            font-size: 200%;
+            text-transform: capitalize;
+            margin: 1rem;
+            font-family: 'roboto', sans-serif;
+            font-style: italic;
+            // color: darken($color: #bbd2f4, $amount: 15);
+            color: hsl(215, 100%, 65%);
+            text-shadow: 1px 1px 1px white;
+        }
+
+        .social_icons{
+
+            a{
+                margin: 0 1rem;
+                font-size: 175%;
+                
+                svg{
+                    // box-shadow: 2px 0px 5px 0px white;
+                    // color: darken($color: #bbd2f4, $amount: 15);
+                    color: hsl(215, 100%, 65%);
+
+                    &:hover{
+                        // color: #76af8f;
+                        color: hsl(146, 50%, 50%);
+                    }
+                }
+            }
+        }
+    } //end of testimony section
+
+    #benefit_overlay{
+        // background: rgb(255,237,164);
+        // background: linear-gradient(180deg, rgba(255,237,164,1) 0%, rgba(187,210,244,1) 95%, rgba(12,26,48,1) 100%); 
+        background-image: url(https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/14333058_1669196776730687_3127813122828464679_n.jpg?_nc_cat=102&_nc_oc=AQmcgBTrjLQqFw_dxdPScHes0dZ6TDIG6YRAUMNADU74dUMFB1zwZQVnfhXtZ7W3UIc&_nc_ht=scontent-lga3-1.xx&oh=ad59cac3607f1fb9e4852487f4b7fa5c&oe=5DF39901);
+        background-size: cover;
+        background-position: 50% 80%;
+        background-repeat: no-repeat;
+
+        @include mediamd{
+            background-attachment: fixed;
+            background-position: 50% 70%;
+        }
+
+        #ending_benefits_section{
+            // margin: 0 auto;
+            padding: 3rem 0;
+            text-transform: capitalize;
+            background: rgb(187,210,244);
+            background: linear-gradient(180deg, rgba(187,210,244,0.5) 50%, rgba(168,168,168,0.5) 100%); 
+
+            // a lot of changes made for better spaces
+            article{
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                // margin-left: 2rem;
+                padding-bottom: 2rem;
+                // grid-template-rows: repeat(4, 100px);
+                align-content: center;
+                align-items: center;
+                justify-content: center;
+                // min-width: 200px;
+                // margin: 0 auto;
+
+                @include mediamd{
+                    // grid-template-columns: 1fr 1fr;
+                    // grid-template-rows: 100px 100px;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    margin: 0 auto;
+                }
+
+                @include medialg{
+                    margin-left: 1rem;
+                }
+
+                @include mediaxl{
+                    justify-content: space-between;
+                    margin-left: 2rem;
+                    
+                    p{
+                        padding-left: 2rem;
+                    }
+                }
+                
+
+                p{
+                    display: inline-flex;
+                    font-size: 150%;
+                    white-space: nowrap;
+                    // margin-left: 3.5rem;
+                    margin-right: 1.5rem;
+                    width: 300px;
+                    // color: darken($color: $main_green, $amount: 0);
+                    color: white;
+                    align-items: center;
+                    justify-content: start;
+
+                    @include mediamd{
+                        display: inline-grid;
+                        grid-template-columns: auto auto;
+                        grid-template-rows: auto;
+                        font-size: 150%;
+                        flex: 0 0 41.666667%;
+                        max-width: 41.666667%;
+                        margin-left: 2rem;
+                    }
+
+                    @include medialg{
+                        font-size: 175%;
+                        padding-left: 1rem;
+                    }
+
+                    svg{
+                        margin-right: 1rem;
+                        min-width: 40px;
+                        max-width: 40px;
+                        height: auto;
+                        color: white;
+                        // darken($color: 
+                        // $main_blue;
+                        // , $amount: 10)
+                        // -webkit-text-stroke: 1px $main_green;
+                    }
+                } //end of para tag
+            } //end of article tag
+
+            .reserve_cta{
+                border: white solid 1px;
+                color: white;
+                background: transparent;
+
+                &:hover{
+                    text-decoration: underline solid currentColor 1px;
+                    box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.8);   
+                }
+            }
+        } //end of benefits section
+    }
+
+    #pop_services_section, #about_us_cta_section, #testimony_section, #benefit_overlay{
+        animation-name: fadeInSection;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: backwards;
+        animation-play-state: paused;
+        animation-delay: 0s;
+        
+        &:hover {
+            animation-fill-mode: forwards;
+            animation-play-state: running;
+        }
+    
+        @keyframes fadeInSection{
+            0% {
+            // opacity: 0.1;
+            opacity: 0;
+            }
+            
+            100% {
+            opacity: 1;
+            }
+        }
+    }
+} // main end
+
+footer{
+    background: darken($color: $main_blue, $amount: 70);
+    color: white;
+
+
+    #main_footer_section{
+    // separate from the little 
+    // copyright section at bottom
+        padding: 1rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include mediamd{
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 1rem 1.5rem;
+        
+        //inspired from col- in bootstrap
+            #footer_connect{
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+
+            #pop_footures{
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+
+            #footer_logo_about{
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+        } // media query ova
+
+        #footer_connect{
+
+            h3{
+                font-size: 175%;
+                font-weight: 400;
+                border-bottom: white 1px solid;
+            }
+
+            .foot_nav{
+            // more in classes section
+                a{
+                    
+                    &:hover{
+                        color: $main_blue;
+                    }
+                }
+            }
+
+            .social_icons{
+                justify-content: start;
+                margin: 1rem 0;
+
+                a:first-child{
+                    margin-left: 0;
+                }
+            }
+        } // end of footer connect
+
+        #pop_footures{
+            text-transform: capitalize;
+            
+            @include mediamd{
+                margin-left: 2rem;
+            }
+
+            @include medialg{
+                margin-left: 0px;
+            }
+
+            h3{
+                font-size: 175%;
+                font-weight: 400;
+                border-bottom: white 1px solid;
+                padding-bottom: .15rem; 
+                margin-bottom: 1rem;
+            }
+
+            .foot_nav{
+            // more in classes section
+
+                a:not(:last-child){
+                    
+                    &:hover{
+                        color: $main_blue;
+                    }
+                }
+
+                a:last-child{
+                    justify-content: center;
+                    align-self: flex-end;
+                    min-width: 160px;
+                    background: #326CC9;
+                    border-color: #326CC9;
+                    
+                    &:hover{
+                        background: none;
+                        color: lighten($color: #326cc9, $amount: 45);
+                    }
+
+                    @include mediamd{
+                        margin-top: 2rem;
+                    }
+                } // end of this a
+            } // end of foot nav
+        } // end of #pop footures
+
+        #footer_logo_about{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 2rem 0 1rem 0;
+
+            @include mediamd{
+                text-align: justify;
+            }
+
+            .logo_container{
+                display: inline-flex;
+                align-self: flex-start;
+                width: 100%;
+                border-bottom: 1px solid white;
+                text-decoration: none;
+
+                @include mediamd{
+                    border: none;
+                    align-self: center;
+                    width: auto;
+                }
+
+                .logo_in_gray{
+                    border-left: solid .45rem #666;
+                    border-right: solid .4rem #666;
+                    border-bottom: solid .3rem #666;
+                    border-top: solid .3rem #666;
+                    display: inline-flex;
+                    align-items: center;
+                    height: 60px;
+                    width: 50px;
+                    padding-right: .25rem;
+                    margin-right: .2rem;
+
+                    .logo_spa{
+                        font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        font-weight: 500;
+
+                        p{
+                            margin: 1px 0;
+                            padding: 0 0 0 .25rem;
+                            color: #666;
+                        }
+                    }
+                    // -----------------
+                    .logo_q{
+                        font-size: 400%;
+                        margin: 0px;
+                        margin-left: -.1rem;
+                        color: #006c61;
+                        font-family: script;
+                        padding: 0px;
+                    }
+                } // end of whats in the gray
+
+                .logo_uatros{
+                    color: #006c61;
+                    font-size: 300%;
+                    font-family: script;
+                    margin: .75rem 0;
+                }
+            } // end of logo
+
+            #foot_about_para{
+                padding: .5rem;
+                line-height: 1.25;
+                font-size: 125%;
+
+                i{
+                    padding: 1.5rem 1rem;
+                    font-size: 175%;
+                    padding: 0 1rem;
+                    line-height: 2.25;
+                    font-weight: 500;
+                    font-family: "serif";
+                }
+            } // #foot about para ends here
+        } // #footer logo about end
+    } // main footer sect ends
+
+    #copyright_section{
+        padding: .25rem 3rem;
+        background: lighten($color: $main_blue, $amount: 10);
+        color: $main_gray;
+
+        a{
+            color: $main_gray;
+
+            &:hover{
+                color: $main_blue;
+            }
+        }
+    } //copyright ends
+} // footer end

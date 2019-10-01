@@ -1,0 +1,992 @@
+// MEDIA QUERIES
+
+$mediaqsm: 576px;
+$mediaqmd: 768px;
+$mediaqlg: 992px;
+$mediaqxl: 1200px;
+
+@mixin mediasm {
+    @media (min-width: #{$mediaqsm}) {
+        @content;
+    }
+}
+@mixin mediamd {
+    @media (min-width: #{$mediaqmd}) {
+        @content;
+    }
+}
+@mixin medialg {
+    @media (min-width: #{$mediaqlg}) {
+        @content;
+    }
+}
+@mixin mediaxl {
+    @media (min-width: #{$mediaqxl}) {
+        @content;
+    }
+}
+
+// MEDIA QUERIES END
+// -------------------------------------------------------------------------------
+// VARIABLES
+
+$nav_margin_top: 100px;
+// forgot to i had this one. its used in 
+// the nav tho like the name entails
+
+$main_green: #96c2a9;
+$main_gray: #a8a8a8;
+$main_blue: #b4cbed;
+
+
+// VARIABLES END
+// -------------------------------------------------------------------------------
+// CLASSES
+
+.reserve_cta{
+// THE COMMON CTA BUTTON
+    border: 3px $main_blue solid;
+    color: white;
+    background: $main_blue;
+    // width: 10rem;
+    // min-height: 5rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: .75rem 1rem;
+    border-radius: 50rem;
+    display: inline-block;
+    
+    &:hover{
+        border-color: $main_green;
+        color: $main_green;
+        background: white;
+    }
+
+} // THE COMMON CTA BUTTON
+// more editing in various places
+
+.pop_service{
+    // the popular service cards
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 450px;
+    min-width: 300px;
+    margin: 2rem auto;
+    background: $main_green;
+    border-radius: .5rem;
+    position: relative;
+    height: 500px;
+    min-height: 500px;
+    max-height: 500px;
+
+    img{
+        display: block;
+        width: 100%;
+        border-top-left-radius: .5rem;
+        border-top-right-radius: .5rem;
+        height: 40%;
+        min-height: 40%;
+        max-height: 40%;
+    }
+
+    .pop_serve_outer_in{
+    // Div for non-img part of service
+        height: 60%;
+        min-height: 60%;
+        max-height: 60%;        
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 1rem;
+        color: white;
+
+            h3{
+                text-align: left;
+                margin-top: 0;
+                margin-bottom: .5rem;
+                color: white !important;
+            }
+
+            small{
+                text-align: left;
+                font-size: 90%;
+            }
+
+            p{
+                text-align: left;
+                text-overflow: ellipsis;
+            }
+
+            h4{
+                margin:auto 0 2rem auto;
+                align-self: flex-end;
+                color: lighten($color: $main_blue, $amount: 15);
+                // font-size: 120%;
+            }
+        // }
+    } // End of outer div
+
+    &:last-child{
+        grid-column: 1 / -1;
+        // centers the one item in the last row
+
+        @include medialg{
+            grid-column: auto;
+        }
+    }
+
+} // end of pop service
+// in html of #pop_services_section
+
+.tha_review{
+    background: $main_green;
+    border-radius: .75rem;
+    width: 300px;
+    padding: 1rem .5rem 2.5rem;
+    color: white;
+    font-weight: 600;
+    margin: 3rem 1.5rem;
+    position: relative;
+
+    svg{
+        border-radius: 50%;
+        background: $main_blue;
+        padding: .75rem;
+        font-size: 150%;
+        margin: 0 .5rem .5rem 0;
+        float: left;
+    } //svg affects the i tag with font awesome classes
+
+    p{
+        line-height: 1.5;
+        padding: 0 .5rem;
+    }
+
+    i{
+        text-align: right;
+        width: 95%;
+        text-align: right;
+        font-size: 125%;
+        display: inline-block;
+        margin-right: 2rem;
+        position: absolute;
+        bottom: 10px;
+        z-index: 5;
+        right: -5px;
+    } // affects regular i tag only because 
+    //font awesome turns it into an svg tag
+    // puts its at the bottom
+} // end of tha_review
+// in html of #testimony_section
+
+.social_icons{
+    padding: 0 0 2rem 0;
+    display: flex; 
+    justify-content: center;
+
+    a{
+        margin: 0 .5rem;
+
+        svg{
+            font-size: 200%;
+            color: darken($color: $main_blue, $amount: 10)
+           ;
+
+            &:hover{
+                color: $main_green;
+            }
+        }
+    }
+} // end social icons
+// more editing in various places
+
+.logo_pic{ 
+// a tag with h1 in it for nav
+    background: url(https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/12804727_1565271077123258_7939033995396338047_n.jpg?_nc_cat=110&_nc_oc=AQn6PnblnouAnZae6NZqkLh-OhpJw_00dBqrd-cAe365B459kF-jc4MOi-L_c59raig&_nc_ht=scontent-lga3-1.xx&oh=edebce218864ca230fd30f38addd59a6&oe=5DF7C4B2);
+    background-size: contain;
+    background-position: center;
+    height: 50px;
+    min-width: 150px;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    transform: scale(2);
+} // the same logo in nav but from scratch
+// in footer only for now
+
+.foot_nav{
+// used twice in the footer for the "list"
+    display: flex;
+    flex-direction: column;
+
+    a{
+        display: inline-flex;
+        color: white;
+        text-decoration: none;
+        padding: .5rem 0; 
+        font-size: 115%;
+        align-items: center;
+
+        svg{
+            margin-right: .5rem;
+            min-width: 20px;
+            max-width: 20px;
+            height: auto;
+        }
+    }
+} // end of foot_nav
+// where else? but more specifically
+// #footer_connect, #pop_footures
+
+// CLASSES END 
+// -------------------------------------------------------------------------------
+// nav and header in body
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 390px;
+
+    nav{
+        background: white;
+        height: $nav_margin_top;
+        width: 100%;
+        position: fixed;
+        margin: 0;
+        padding: 0;
+        // display: flex;
+        // justify-content: space-around;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        text-align: center;
+        z-index: 80;
+        font-weight: 600;
+
+        @include mediasm{
+           grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @include mediamd{
+            display: flex;
+            justify-content: center;
+        }
+
+        @include mediaxl{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            width: 100%;
+        }
+
+        #hamburger_section{
+            position: relative;
+            display: inline-block;
+            justify-self: start;
+
+            @include mediamd{
+                display: none;
+            }
+
+            &:hover{
+                
+                #hamburger{
+                    // background: #ccc
+
+                    svg{
+                        transform: rotate(-270deg);
+                    }
+                }
+
+                article{
+                    display: block;
+                }
+            }
+
+            #hamburger{ 
+                padding: 1rem;
+                height: 1rem;
+                width: 1rem; 
+                color: $main_gray;
+                font-size: 2rem;
+                margin-left: 1rem;
+            }
+            
+            // the container of the dropdown links
+            article{
+                display: none;
+                position: absolute;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 100;
+                margin-left: 2rem;
+                // margin-top: 1rem;
+
+                // the dropdown links
+                a{
+                    padding: 16px;
+                    text-decoration: none;
+                    display: block;  
+                    background: white;
+                    color: $main_blue;
+
+                    &:hover{
+                        background-color: $main_gray;
+                        color: white;
+                    }
+                }
+            }
+        } // END OF #HAMBURGER_SECTION
+
+        #logo_and_links{
+            display: flex;
+            flex-direction: column;
+            justify-self: end; 
+            width: 100%;
+            text-align: right;
+            margin-right: 0;
+            
+            @include mediasm{
+                justify-self: center;
+                text-align: center;
+            }
+
+            @include mediaxl{
+                flex-direction: row; 
+                justify-content: flex-start;
+            }
+
+            .logo_pic{
+                z-index: -10;
+            }
+
+            // links under or next to the logo in desktop
+            article{
+                display: none;
+
+                @include mediamd{
+                    display: flex;
+                    justify-content: center;
+                    
+                    a{
+                        margin: 0 1rem;
+                        text-decoration: none;
+                        color: $main_green;
+                        font-size: 115%;
+
+                        &:hover{
+                            color: $main_blue;
+                            font-size: 120%;
+                        }
+                    }
+                }
+
+                @include mediaxl{
+                    align-items: center;
+
+                    a{
+                        margin-left: 6rem;
+                    }
+                }
+                
+            }
+        } // END OF #logo_and_links. *CAPITAL LETTERS TO GRAB ATTN
+
+        #cta_nav_section{
+            display: none;
+
+            @include mediasm{
+                display: block;
+                margin-right: 2rem;
+                justify-self: end;
+            }
+
+            @include mediamd{
+                display: none;
+            }
+
+            @include mediaxl{
+                display: block;
+            }
+        } //end cta nav section
+
+    } // END OF THE NAV TAG
+
+    #fixed_up{
+        position: fixed;
+        bottom: 10%;
+        right: 5%;
+        font-size: 200%;
+        z-index: 100;
+        color: rgba($color: $main_gray, $alpha: .5);
+
+        &:hover{
+            color: rgba($color: $main_gray, $alpha: 0.85);
+            // z-index: -100; an annoying idea
+        }
+    } //end of fixed up
+
+    header{
+        padding-top: $nav_margin_top;
+        padding-bottom: 2rem;
+        text-align: center;
+        background: $main_green;
+
+        #opening_article{
+            color: white;
+            
+            h1{
+                padding: 1rem 0 .5rem;
+                font-size: 350%;
+                margin: 0;
+            }
+
+            h2{
+                font-size: 175%;
+                margin: 0;
+                padding: 0 0 .25rem;
+            }
+
+            p{
+                font-weight: 600;
+                padding: .25rem 2rem 1.5rem;
+                margin: 0 auto;
+                max-width: 400px;
+            }
+        } // end of opening article
+        
+        #mobile_contents_header{
+            border: 1px solid black;
+            background: white;
+            width: 400px;
+            margin: .5rem auto 0;
+            text-align: left;
+            padding: 0 1rem 1rem;
+
+
+            @include medialg{
+                display: none;
+            }
+
+            h2{
+                color: darken($color: $main_gray, $amount: 10);
+            }
+
+            #outside_ul{
+                list-style-type: none;
+
+                li{
+
+                    h3{
+
+                        a{
+                            color: darken($color: $main_blue, $amount: 10);
+                        }
+                    }
+
+                    ul{
+                        list-style-type: disc;
+
+                        li{
+                            margin: .25rem 0;
+
+                            a{
+                                color: darken($color: $main_green, $amount: 10);
+                            }
+                        }
+                    }
+                }
+            }
+
+            #outside_outside_ul_atag{
+                margin: 1.75rem auto .5rem;
+                display: block;
+                width: 180px;
+                text-align: center;
+            }
+        }
+
+        #sample_card{
+            display: none;
+
+            @include medialg{
+                display: flex;
+                flex-direction: column;
+
+                h2{
+                    color: white;
+                    text-decoration: underline;
+                    font-size: 185%;
+                    text-align: left;
+                    margin: 2rem auto -1.5rem;
+                    padding-right: 15rem;
+                }
+
+
+                .pop_serve_outer_in{
+                    background: $main_blue;
+                    border-bottom-right-radius: 1rem;
+                    border-bottom-left-radius: 1rem;
+                    color: white !important;
+
+                    h3{
+                        font-size: 200%;
+                        margin-top: .5rem;
+                        margin-bottom: 0;
+                    }
+
+                    small{
+                        font-size: 105%;
+                        margin: .25rem;
+                    }
+
+                    p{
+                        font-size: 130%;
+                    }
+
+                    h4{
+                        margin: auto 1rem 1rem auto;
+                        font-size: 175%;
+                    }
+                }
+            }
+        }
+    } // END OF THE HEADER TAG
+} // body "end"
+
+main{
+
+    #massage_services_section{
+
+        // Check Classes up top to see more 
+        // of how the elements were affected
+
+        h2{
+            color: $main_green;
+            font-size: 200%;
+            margin: 3rem 0 1rem 3rem;
+            text-decoration: underline;
+        }
+
+        // .pop_service inside here but not really doe
+        #massage_services_div{
+            display: grid;
+            
+            @include mediamd{
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+
+            @include medialg{
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+            }
+        } //end of pop serve div
+
+        h3{
+            font-size: 150%;
+            color: $main_green;
+            margin-bottom: 0;
+            padding: 0;
+            text-transform: capitalize;
+
+            &:last-child{
+            // the continue scrollling under the cards
+                padding: 0 1rem;
+                text-align: center;
+                // line-height: 2;
+
+                span{
+                    line-height: 2.5;
+                    // margin-bottom: -1rem;
+                }
+            }
+
+            a{
+                margin-bottom: 3rem;
+                margin-top: -.5rem;
+            }
+        } //end of h3
+    } //end of # pop serve section
+
+    #package_promo_section{
+
+
+        #promo_h2{
+            color: $main_green;
+            font-size: 200%;
+            margin: 3rem 0 1rem 3rem;
+            text-decoration: underline;
+        }
+
+        #package_promo_div{
+            display: grid;
+            justify-content: center;
+            
+            @include mediamd{
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+
+            @include medialg{
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+            }
+
+            .package_promo_title{
+                display: block;
+                width: 100%;
+                border-top-left-radius: .5rem;
+                border-top-right-radius: .5rem;
+                height: 40%;
+                min-height: 40%;
+                max-height: 40%;
+                background: darken($color: $main_gray, $amount: 0);
+                color: white;
+                text-align: center;
+                font-size: 130%;
+                text-transform: uppercase;
+                margin: auto 0;
+                line-height: 1.5;
+                padding: .25rem 0;
+            }
+
+            .price-slashy {
+
+                del {
+                    text-decoration: none;
+                    position: relative;
+                    font-size: 20px;
+
+                    &:before{
+                        content: " ";
+                        display: block;
+                        width: 100%;
+                        border-top: 3px solid rgba($main_gray, 0.8);
+                        height: 2px;
+                        position: absolute;
+                        bottom: 10px;
+                        left: 0;
+                        transform: rotate(-11deg);
+                    }
+
+                    &:after{
+                        content: " ";
+                        display: block;
+                        width: 100%;
+                        border-top: 3px solid rgba($main_gray, 0.8);
+                        height: 2px;
+                        position: absolute;
+                        bottom: 10px;
+                        left: 0;
+                        transform: rotate(11deg);
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    #closing_cta_section{
+
+        h3{
+            
+            a{
+                display: block;
+                margin: 0 auto 3rem auto;
+                width: 125px;
+                text-align: center;
+            }
+        }
+    }
+
+    // for the form
+    #dropdown_form{
+        // $midnight: #2c3e50;
+        // $clouds: #ecf0f1;
+        margin: 0 2rem 2rem;
+        
+        input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+        // Layout
+        .row {
+            display:flex;
+
+            .col {
+                flex:1;
+                
+                &:last-child {
+                    margin-left: 1em;
+                }
+            }
+        }
+        /* Accordion styles */
+        .tabs {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
+        }
+        .tab {
+            width: 100%;
+            color: white;
+            overflow: hidden;
+
+            &-label {
+                display: flex;
+                justify-content: space-between;
+                padding: 1em;
+                background: darken($main_blue, 10%);
+                font-weight: bold;
+                cursor: pointer;
+                /* Icon */
+                
+                &:hover {
+                    background: darken($main_blue, 20%);
+                }
+                &::after {
+                    content: "\276F";
+                    width: 1em;
+                    height: 1em;
+                    text-align: center;
+                    transition: all .35s;
+                }
+            }
+
+            &-content {
+                max-height: 0;
+                padding: 0 1em;
+                color: darken($main_green, 10%);
+                background: lighten($main_gray, 50%);
+                transition: all .35s;
+            }
+
+            &-close {
+                display: flex;
+                justify-content: flex-end;
+                padding: 1em;
+                font-size: 0.75em;
+                background: darken($main_blue, 10%);
+                cursor: pointer;
+
+                &:hover {
+                    background: darken($main_blue, 20%);
+                }
+            }
+        }
+
+        // :checked
+        input:checked {
+
+            + .tab-label {
+                    background: darken($main_blue, 20%);
+                    &::after {
+                    transform: rotate(90deg);
+                }
+            }
+            
+            ~ .tab-content {
+                max-height: 100vh;
+                padding: 1em;
+            }
+        }
+    }// for the Form
+} // main end
+
+footer{
+    background: darken($color: $main_blue, $amount: 70);
+    color: white;
+
+
+    #main_footer_section{
+    // separate from the little 
+    // copyright section at bottom
+        padding: 1rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include mediamd{
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 1rem 1.5rem;
+        
+        //inspired from col- in bootstrap
+            #footer_connect{
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+
+            #pop_footures{
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+
+            #footer_logo_about{
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+        } // media query ova
+
+        #footer_connect{
+
+            h3{
+                font-size: 175%;
+                font-weight: 400;
+                border-bottom: white 1px solid;
+            }
+
+            .foot_nav{
+            // more in classes section
+                a{
+                    
+                    &:hover{
+                        color: $main_blue;
+                    }
+                }
+            }
+
+            .social_icons{
+                justify-content: start;
+                margin: 1rem 0;
+
+                a:first-child{
+                    margin-left: 0;
+                }
+            }
+        } // end of footer connect
+
+        #pop_footures{
+            text-transform: capitalize;
+            
+            @include mediamd{
+                margin-left: 2rem;
+            }
+
+            @include medialg{
+                margin-left: 0px;
+            }
+
+            h3{
+                font-size: 175%;
+                font-weight: 400;
+                border-bottom: white 1px solid;
+                padding-bottom: .15rem; 
+                margin-bottom: 1rem;
+            }
+
+            .foot_nav{
+            // more in classes section
+
+                a:not(:last-child){
+                    
+                    &:hover{
+                        color: $main_blue;
+                    }
+                }
+
+                a:last-child{
+                    justify-content: center;
+                    align-self: flex-end;
+                    min-width: 160px;
+                    
+                    @include mediamd{
+                        margin-top: 2rem;
+                    }
+                } // end of this a
+            } // end of foot nav
+        } // end of #pop footures
+
+        #footer_logo_about{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 2rem 0 1rem 0;
+
+            @include mediamd{
+                text-align: justify;
+            }
+
+            .logo_container{
+                display: inline-flex;
+                align-self: flex-start;
+                width: 100%;
+                border-bottom: 1px solid white;
+                text-decoration: none;
+
+                @include mediamd{
+                    border: none;
+                    align-self: center;
+                    width: auto;
+                }
+
+                .logo_in_gray{
+                    border-left: solid .45rem #666;
+                    border-right: solid .4rem #666;
+                    border-bottom: solid .3rem #666;
+                    border-top: solid .3rem #666;
+                    display: inline-flex;
+                    align-items: center;
+                    height: 60px;
+                    width: 50px;
+                    padding-right: .25rem;
+                    margin-right: .2rem;
+
+                    .logo_spa{
+                        font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        font-weight: 500;
+
+                        p{
+                            margin: 1px 0;
+                            padding: 0 0 0 .25rem;
+                            color: #666;
+                        }
+                    }
+                    // -----------------
+                    .logo_q{
+                        font-size: 400%;
+                        margin: 0px;
+                        margin-left: -.1rem;
+                        color: #006c61;
+                        font-family: script;
+                        padding: 0px;
+                    }
+                } // end of whats in the gray
+
+                .logo_uatros{
+                    color: #006c61;
+                    font-size: 300%;
+                    font-family: script;
+                    margin: .75rem 0;
+                }
+            } // end of logo
+
+            #foot_about_para{
+                padding: .5rem;
+                line-height: 1.25;
+                font-size: 125%;
+
+                i{
+                    font-size: 140%;
+                    padding: 1.5rem 1rem;
+                }
+            } // #foot about para ends here
+        } // #footer logo about end
+    } // main footer sect ends
+
+    #copyright_section{
+        padding: .25rem 3rem;
+        background: lighten($color: $main_blue, $amount: 10);
+        color: $main_gray;
+
+        a{
+            color: $main_gray;
+
+            &:hover{
+                color: $main_blue;
+            }
+        }
+    } //copyright ends
+} // footer end
