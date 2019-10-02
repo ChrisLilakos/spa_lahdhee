@@ -57,8 +57,10 @@ $main_blue: #b4cbed;
     display: inline-block;
     
     &:hover{
-        border-color: $main_green;
-        color: $main_green;
+        // border-color: $main_green;
+        // color: $main_green;
+        color: $main_blue;
+        border-color: $main_blue;
         background: white;
     }
 
@@ -73,7 +75,9 @@ $main_blue: #b4cbed;
     max-width: 450px;
     min-width: 300px;
     margin: 2rem auto;
-    background: $main_green;
+    // background: $main_green;
+    background: #4b7a9c;
+    box-shadow: 5px 5px 20px -5px white;
     border-radius: .5rem;
     position: relative;
     height: 500px;
@@ -190,8 +194,7 @@ $main_blue: #b4cbed;
 
         svg{
             font-size: 200%;
-            color: darken($color: $main_blue, $amount: 10)
-           ;
+            color: darken($color: $main_blue, $amount: 10);
 
             &:hover{
                 color: $main_green;
@@ -426,41 +429,68 @@ body{
     } //end of fixed up
 
     header{
-        padding-top: $nav_margin_top;
+        // padding-top: $nav_margin_top;
         padding-bottom: 2rem;
-        text-align: center;
-        background: $main_green;
+        // text-align: center;
+        // background: $main_green;
+        background: rgb(104,102,100);
+        // background: linear-gradient(180deg, rgba(104,102,100,1) 35%, rgba(10,46,98,1) 100%);
+        background: linear-gradient(180deg, rgba(104,102,100,1) 35%, rgba(74,123,159,1) 100%); 
 
-        #opening_article{
-            color: white;
+        #opening_section{
+            width: 100%;
+            height: 55vh;
+            background: url(https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/54432383_2267464946903864_1217704321693515776_n.jpg?_nc_cat=109&_nc_oc=AQmX4mcARpeCUwKyqpP2HszvZHenbryufh8U2iQuNegmospChv3sNKkeIZE9Py6SxH4&_nc_ht=scontent-lga3-1.xx&oh=f7489c36559dadb5cca04c7562f0fc40&oe=5E28A30A);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+
+            @include mediasm{
+                height: 70vh;
+            }
             
-            h1{
-                padding: 1rem 0 .5rem;
-                font-size: 350%;
-                margin: 0;
+            @include mediamd{
+                height: 80vh;
+                background-attachment: fixed;
             }
 
-            h2{
-                font-size: 175%;
-                margin: 0;
-                padding: 0 0 .25rem;
-            }
+            #opening_article{
+                color: white;
+                background: rgba(50, 50, 50, .7);
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-left: 2rem;
+                // padding: .25rem 2rem 1.5rem;
+                
+                h1{
+                    // padding: 1rem 0 .5rem;
+                    font-size: 350%;
+                    margin: 0;
+                }
 
-            p{
-                font-weight: 600;
-                padding: .25rem 2rem 1.5rem;
-                margin: 0 auto;
-                max-width: 400px;
-            }
-        } // end of opening article
-        
+                h2{
+                    font-size: 175%;
+                    margin: 0;
+                    // padding: 0 0 .25rem;
+                }
+
+                p{
+                    font-weight: 600;
+                    // padding: .25rem 2rem 1.5rem;
+                    // margin: 0 auto;
+                    max-width: 400px;
+                }
+            } // end of opening article
+        }
+
         #mobile_contents_header{
-            border: 1px solid black;
-            background: white;
-            width: 400px;
-            margin: .5rem auto 0;
-            text-align: left;
-            padding: 0 1rem 1rem;
+            // border: 1px solid black;
+            // background: white;
+            // width: 400px;
+            // margin: .5rem auto 0;
+            padding: 0 2rem 1rem;
 
 
             @include medialg{
@@ -468,18 +498,27 @@ body{
             }
 
             h2{
-                color: darken($color: $main_gray, $amount: 10);
+                // color: darken($color: $main_gray, $amount: 10);
+                color: white;
+                font-size: 100%;
+                padding-left: 5rem;
+                text-align: right;
+                display: none;
             }
 
             #outside_ul{
                 list-style-type: none;
+                padding-left: 1.25rem;
 
                 li{
 
                     h3{
 
                         a{
-                            color: darken($color: $main_blue, $amount: 10);
+                            // color: darken($color: $main_blue, $amount: 10);
+                            // color: #bbd2f4;
+                            color: #c6d9f6;
+                            font-size: 130%;
                         }
                     }
 
@@ -490,7 +529,9 @@ body{
                             margin: .25rem 0;
 
                             a{
-                                color: darken($color: $main_green, $amount: 10);
+                                // color: darken($color: $main_green, $amount: 10);
+                                font-size: 115%;
+                                color: #c6d9f6;
                             }
                         }
                     }
@@ -556,14 +597,17 @@ body{
 main{
 
     #massage_services_section{
-
+        background: rgb(74,123,159);
+        background: linear-gradient(180deg, rgba(74,123,159,1) 0%, rgba(201,219,246,1) 70%); 
         // Check Classes up top to see more 
         // of how the elements were affected
 
         h2{
-            color: $main_green;
+            // color: $main_green;
+            color: white;
             font-size: 200%;
-            margin: 3rem 0 1rem 3rem;
+            padding: 3rem 0 1rem 3rem;
+            margin: 0;
             text-decoration: underline;
         }
 
@@ -584,7 +628,8 @@ main{
 
         h3{
             font-size: 150%;
-            color: $main_green;
+            // color: $main_green;
+            color: white;
             margin-bottom: 0;
             padding: 0;
             text-transform: capitalize;
@@ -609,12 +654,18 @@ main{
     } //end of # pop serve section
 
     #package_promo_section{
+        background: rgb(201,219,246);
+        background: linear-gradient(180deg, rgba(201,219,246,1) 0%, rgba(255,255,255,1) 100%); 
+        // background: linear-gradient(180deg, rgba(201,219,246,1) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 50%, rgba(187,210,244,1) 65%, rgba(74,123,159,1) 85%, rgba(12,26,48,1) 100%); 
+
 
 
         #promo_h2{
-            color: $main_green;
+            // color: $main_green;
+            color: white;
             font-size: 200%;
-            margin: 3rem 0 1rem 3rem;
+            padding: 3rem 0 1rem 3rem;
+            margin: 0;
             text-decoration: underline;
         }
 

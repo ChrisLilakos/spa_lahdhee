@@ -657,14 +657,14 @@ body{
             height: 55vh;
             background-image: url(https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/44392206_2152131651770528_1881851452729589760_o.jpg?_nc_cat=107&_nc_oc=AQmw6uEAxhFutvaPJlJJ7t6LiPXKGsp81SZugpkXQbLHfC1Qe4RFBOqNCDgbcEFg6qg&_nc_ht=scontent-lga3-1.xx&oh=471181003bf6a80990a2607972dc4ecd&oe=5E05CB98);
             background-size: cover;
-            background-position: center center;
+            background-position: center 100%;
 
             @include mediasm{
                 height: 70vh;
             }
             
             @include mediamd{
-                height: 85vh;
+                height: 80vh;
                 background-attachment: fixed;
             }
         }
@@ -679,12 +679,14 @@ main{
         // background: linear-gradient(180deg, darken($color: #8ce6a2, $amount: 10) 0%, rgba(187,210,244,1) 80%); 
         background: rgb(255,237,164);
         background: linear-gradient(180deg, rgba(255, 237, 164, 0.6) 0%, #f2d4b6 30%, #bbd2f4 80%);
-        padding-bottom: 2.75rem;
+        // padding-bottom: 2.75rem;
+        padding: 1.75rem 0 2.75rem 0;
 
         h2{
             text-transform: capitalize;
             margin: 0;
-            color: darken($color: #bbd2f4, $amount: 10);
+            // color: darken($color: #bbd2f4, $amount: 10);
+            color: #0a2e62;
             font-weight: 200;
             padding: 2rem;
             padding-bottom: 0;
@@ -708,7 +710,9 @@ main{
             // background: saturate($color: $main_green, $amount: 20);
             border-color: transparent;
             // background: #f96d64;
-            background: saturate($color: $main_green, $amount: 35);
+            // background: saturate($color: $main_green, $amount: 35);
+            background: #3aa669;
+            box-shadow: 2px 1px 6px -1px #3f8e61;
 
             &:hover{
                 background: transparent;
@@ -726,7 +730,8 @@ main{
             max-width: $mediaqsm;
             margin: 0 auto;
             // color: darken($color: saturate($color: $main_blue, $amount: 30), $amount: 50);
-            color: #4a7b9f;
+            // color: #4a7b9f;
+            color: #0a2e62;
             font-size: 150%;
             font-family: 'Roboto', sans-serif;
             line-height: 1.4;
@@ -748,7 +753,8 @@ main{
             padding: 2rem 0;
         }
 
-        // .pop_service inside here but not really doe
+        // .pop_service nested in html but in 
+        // classes section of doc. scroll up to find
         #pop_services_div{
             display: grid;
             
@@ -769,7 +775,7 @@ main{
             margin-bottom: 0;
             padding: 0;
             font-family: 'roboto', sans-serif;
-            font-style: italic;
+            // font-style: italic;
             text-transform: capitalize;
 
             &:last-child{
@@ -778,16 +784,20 @@ main{
 
             a{
                 margin: 1rem 0 2.5rem;
-                background: none;
+                // background: none;
+                background: saturate($color: #4a7b9f, $amount: 10);
                 border: 2px solid saturate($color: #4a7b9f, $amount: 10);
-                color: saturate($color: #4a7b9f, $amount: 10);
-                font-family: Arial, Helvetica, sans-serif;
+                // color: saturate($color: #4a7b9f, $amount: 10);
+                color: white;
+                // font-family: Arial, Helvetica, sans-serif;
                 font-style: normal;
-                font-weight: 500;
+                // font-weight: 500;
 
                 &:hover{
-                    box-shadow: 0px 0px 1px 1px saturate($color: #4a7b9f, $amount: 10);
-                    font-weight: 600;
+                    // box-shadow: 0px 0px 1px 1px saturate($color: #4a7b9f, $amount: 10);
+                    // font-weight: 600;
+                    color: saturate($color: #4a7b9f, $amount: 10);
+                    background: none;
                 }
             }
         } //end of h3
@@ -813,8 +823,9 @@ main{
         article{
             height: 100%;
             width: 100%;
-            background: rgba($color: $main_blue, $alpha: .8);
+            background: rgba($color: $main_blue, $alpha: .6);
             display: flex;
+            text-shadow: 0px 0px 2px #d9d9d9;
             // hovers over picture
 
             @include mediamd{
@@ -833,9 +844,11 @@ main{
                 flex-direction: column;
                 justify-content: space-around;
                 padding: 3rem;
-                color: lighten($color: rgb(255,237,164), $amount: 10);
+                // color: lighten($color: rgb(255,237,164), $amount: 10);
+                // color: #1D2B40;
+                color: #334C71;
                 margin: 0 auto;
-                text-shadow: 2px 1px 1px $main_gray;
+                
 
                 @include mediamd{
                     color: #4a7b9f;
@@ -862,6 +875,7 @@ main{
                 }
 
                 a{
+                    text-shadow: 2px 1px 1px $main_gray;
                     // width: 150px;
                     // margin: 0 auto;
                     font-size: 125%;
@@ -987,6 +1001,7 @@ main{
                 justify-content: center;
                 // min-width: 200px;
                 // margin: 0 auto;
+                color: #303740;
 
                 @include mediamd{
                     // grid-template-columns: 1fr 1fr;
@@ -1019,9 +1034,10 @@ main{
                     margin-right: 1.5rem;
                     width: 300px;
                     // color: darken($color: $main_green, $amount: 0);
-                    color: white;
+                    // color: white;
                     align-items: center;
                     justify-content: start;
+                    text-shadow: 1px 0px 2px rgba(255, 255, 255, 0.8);
 
                     @include mediamd{
                         display: inline-grid;
@@ -1043,7 +1059,7 @@ main{
                         min-width: 40px;
                         max-width: 40px;
                         height: auto;
-                        color: white;
+                        // color: white;
                         // darken($color: 
                         // $main_blue;
                         // , $amount: 10)
@@ -1053,13 +1069,18 @@ main{
             } //end of article tag
 
             .reserve_cta{
-                border: white solid 1px;
+                // border: white solid 1px;
                 color: white;
-                background: transparent;
+                // background: transparent;
+                border: #303740 solid 2px;
+                background: #303740;
 
                 &:hover{
-                    text-decoration: underline solid currentColor 1px;
-                    box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.8);   
+                    // text-decoration: underline solid currentColor 1px;
+                    box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.8);
+                    background: transparent;
+                    color: #303740;
+                    text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.8);   
                 }
             }
         } //end of benefits section
