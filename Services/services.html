@@ -46,18 +46,40 @@
     <header id="header">
         <section id="opening_section">
             <article id="opening_article">
-                <h1>Services</h1>
-            
-                <h2>
-                    Add value to your vacation
-                </h2>
-                <p>
-                    Pick your therapy 
-                    from the selections 
-                    below to maximize 
-                    your vacations relaxation. 
-                </p>
+                <aside id="opening_content">
+                    <h1>Services</h1>
+                
+                    <h2>
+                        Add value to your vacation
+                    </h2>
+                    <p>
+                        Pick your therapy 
+                        from the selections 
+                        below to maximize 
+                        your vacations relaxation. 
+                    </p>
+                </aside>
+                <aside id="sample_card">
+                <h2>Sample Card</h2>
+                <article class="pop_service"><!-- sample card  -->
+                    <img src="http://www.jaipuriaschoolpadrauna.in/wp-content/uploads/2016/11/blank-img.jpg" alt="image">
+                    <div class="pop_serve_outer_in">
+                        <h3>Treatment Name</h3>
+                        <small>Session Time</small>
+                        <p>
+                            Description of the treatment. Session 
+                            time and price are written at what they 
+                            typically are. However, changes that 
+                            better accomadate you can be made to.
+                        </p>
+                        
+                        <h4>Price</h4>
+                    </div> 
+                </article> 
+            </aside>
             </article>
+                
+            
         </section>
 
         <section id="mobile_contents_header">
@@ -87,25 +109,6 @@
             </ul>
             <a href="" class="reserve_cta" id="outside_outside_ul_atag">Mind Made? Click Here</a>
         </section><!-- end of mob contents header. display noned at desktop -->
-
-        <section id="sample_card">
-            <h2>Sample Card</h2>
-            <article class="pop_service"><!-- sample card  -->
-                <img src="http://www.jaipuriaschoolpadrauna.in/wp-content/uploads/2016/11/blank-img.jpg" alt="image">
-                <div class="pop_serve_outer_in">
-                    <h3>Treatment Name</h3>
-                    <small>Session Time</small>
-                    <p>
-                        Description of the treatment. Session 
-                        time and price are written at what they 
-                        typically are. However, changes that 
-                        better accomadate you can be made to.
-                    </p>
-                    
-                    <h4>Price</h4>
-                </div> 
-            </article> 
-        </section>
     </header>
 
     <main id="main">
@@ -368,11 +371,22 @@
                             <input type="text" name="" id="" placeholder="Name" required>
                             <input type="email" name="" id="" placeholder="Email" required>
                             <!-- <input type="date" name="" id="" placeholder="Date"> -->
-                            <label for="inquiry_msg">message then whats should be in it</label>
-                            <textarea name="inquiry_msg" id="inquiry_msg" placeholder="Type" required></textarea> <!-- cols="30" rows="10" -->
-                            <input type="checkbox" name="understand_swishbox" id="understand_swishbox">
-                            <label for="understand_swishbox">basically, i agree</label>
-                            <input type="submit" value="hey!">
+                            <label for="inquiry_msg">Leave us a Message<br>
+                                <small>
+                                    We recommend including # of people, 
+                                    services of interest, expected time/date, 
+                                    questions, concerns, request, inquiries, 
+                                    or/and any other potentially essential 
+                                    additional info and we'll get back to you shortly
+                                </small>
+                            </label>
+                            <textarea name="inquiry_msg" id="inquiry_msg" placeholder="Get to typin'..." 
+                            required></textarea> <!-- cols="30" rows="10" -->
+                            <label for="understand_swishbox">
+                                <input type="checkbox" name="understand_swishbox" id="understand_swishbox">
+                                Basically, i agree to the <a href="">Privacy policy</a> and <a href="">terms</a> stuff
+                            </label>
+                            <input type="submit" value="See You Soon" class="reserve_cta">
                         </form>
                     </div>
                 </article>

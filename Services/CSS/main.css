@@ -456,6 +456,26 @@ body header #opening_section #opening_article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2rem;
+}
+
+@media (min-width: 992px) {
+  body header #opening_section #opening_article {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+}
+
+body header #opening_section #opening_article #opening_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -463,22 +483,75 @@ body header #opening_section #opening_article {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-left: 2rem;
 }
 
-body header #opening_section #opening_article h1 {
+body header #opening_section #opening_article #opening_content h1 {
   font-size: 350%;
   margin: 0;
 }
 
-body header #opening_section #opening_article h2 {
+body header #opening_section #opening_article #opening_content h2 {
   font-size: 175%;
   margin: 0;
 }
 
-body header #opening_section #opening_article p {
+body header #opening_section #opening_article #opening_content p {
   font-weight: 600;
   max-width: 400px;
+}
+
+body header #opening_section #opening_article #sample_card {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  body header #opening_section #opening_article #sample_card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body header #opening_section #opening_article #sample_card h2 {
+    color: white;
+    text-decoration: underline;
+    font-size: 135%;
+    text-align: left;
+    margin: 2rem 2rem -1.5rem;
+  }
+  body header #opening_section #opening_article #sample_card .pop_service {
+    max-width: 300px;
+    min-width: 150px;
+    height: 250px;
+    min-height: 250px;
+    max-height: 250px;
+  }
+  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_outer_in {
+    background: #4b7a9c;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    color: white !important;
+    padding: .5rem;
+  }
+  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_outer_in h3 {
+    font-size: 125%;
+    margin: 0;
+  }
+  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_outer_in small {
+    font-size: 75%;
+    margin: .25rem;
+  }
+  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_outer_in p {
+    font-size: 80%;
+    margin: 0;
+    padding: 0.25rem 0.25rem 0 .25rem;
+  }
+  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_outer_in h4 {
+    margin: auto .5rem 1rem auto;
+    font-size: 125%;
+  }
 }
 
 body header #mobile_contents_header {
@@ -529,52 +602,6 @@ body header #mobile_contents_header #outside_outside_ul_atag {
   text-align: center;
 }
 
-body header #sample_card {
-  display: none;
-}
-
-@media (min-width: 992px) {
-  body header #sample_card {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  body header #sample_card h2 {
-    color: white;
-    text-decoration: underline;
-    font-size: 185%;
-    text-align: left;
-    margin: 2rem auto -1.5rem;
-    padding-right: 15rem;
-  }
-  body header #sample_card .pop_serve_outer_in {
-    background: #b4cbed;
-    border-bottom-right-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    color: white !important;
-  }
-  body header #sample_card .pop_serve_outer_in h3 {
-    font-size: 200%;
-    margin-top: .5rem;
-    margin-bottom: 0;
-  }
-  body header #sample_card .pop_serve_outer_in small {
-    font-size: 105%;
-    margin: .25rem;
-  }
-  body header #sample_card .pop_serve_outer_in p {
-    font-size: 130%;
-  }
-  body header #sample_card .pop_serve_outer_in h4 {
-    margin: auto 1rem 1rem auto;
-    font-size: 175%;
-  }
-}
-
 main #massage_services_section {
   background: #4a7b9f;
   background: -webkit-gradient(linear, left top, left bottom, from(#4a7b9f), color-stop(70%, #c9dbf6));
@@ -614,7 +641,7 @@ main #massage_services_section #massage_services_div {
 
 main #massage_services_section h3 {
   font-size: 150%;
-  color: white;
+  color: #4b7a9c;
   margin-bottom: 0;
   padding: 0;
   text-transform: capitalize;
@@ -641,7 +668,7 @@ main #package_promo_section {
 }
 
 main #package_promo_section #promo_h2 {
-  color: white;
+  color: #4b7a9c;
   font-size: 200%;
   padding: 3rem 0 1rem 3rem;
   margin: 0;
@@ -736,7 +763,7 @@ main #dropdown_form {
   /* Accordion styles */
 }
 
-main #dropdown_form input {
+main #dropdown_form #chck1 {
   position: absolute;
   opacity: 0;
   z-index: -1;
@@ -801,41 +828,75 @@ main #dropdown_form .tab-label::after {
 main #dropdown_form .tab-content {
   max-height: 0;
   padding: 0 1em;
-  color: #76af8f;
+  color: #676767;
   background: white;
   -webkit-transition: all .35s;
   transition: all .35s;
 }
 
-main #dropdown_form .tab-close {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding: 1em;
-  font-size: 0.75em;
-  background: #8baee3;
-  cursor: pointer;
-}
-
-main #dropdown_form .tab-close:hover {
+main #dropdown_form #chck1:checked + .tab-label {
   background: #6292d9;
 }
 
-main #dropdown_form input:checked + .tab-label {
-  background: #6292d9;
-}
-
-main #dropdown_form input:checked + .tab-label::after {
+main #dropdown_form #chck1:checked + .tab-label::after {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 
-main #dropdown_form input:checked ~ .tab-content {
+main #dropdown_form #chck1:checked ~ .tab-content {
   max-height: 100vh;
   padding: 1em;
+}
+
+main #dropdown_form #chck1:checked ~ .tab-content form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #dropdown_form #chck1:checked ~ .tab-content form input {
+  margin: .25rem;
+  width: 75%;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  font-size: 125%;
+  padding: .2rem 0;
+}
+
+main #dropdown_form #chck1:checked ~ .tab-content form label[for="inquiry_msg"] {
+  padding: .5rem 0.25rem;
+  width: 50%;
+}
+
+main #dropdown_form #chck1:checked ~ .tab-content form label[for="understand_swishbox"] {
+  margin: .25rem 0 .5rem .25rem;
+}
+
+main #dropdown_form #chck1:checked ~ .tab-content form label[for="understand_swishbox"] input {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0;
+  margin-right: 1rem;
+}
+
+main #dropdown_form #chck1:checked ~ .tab-content form textarea {
+  padding: 0.4rem;
+  width: 50%;
+  margin: 0.25rem 0.25rem 1rem;
+}
+
+main #dropdown_form #chck1:checked ~ .tab-content form .reserve_cta {
+  margin: .25rem auto;
+  padding: .25rem 0;
+  width: 250px;
+  font-weight: 500;
+  font-size: 200%;
+  border-color: inherit;
 }
 
 footer {
