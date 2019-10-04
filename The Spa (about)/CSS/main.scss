@@ -75,20 +75,35 @@ body{
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     min-width: 390px;
+    overflow-x: hidden;
 
     h2{
         text-transform: capitalize;
     }
 
     header{
+        width: 100%;
+        height: 55vh;
+        background-image: url(https://steemitimages.com/p/62PdCouTvNPDiCnjgoQXRxyJDrzuLR4KbVsRymyPFoZWoSyLehvDA1DhHCw2wKXGrHNtQgwePtGMMHQiWr8Z1BiBTj5szB6G3NzwcG7HX6nmTeE?format=match&mode=fit&width=640);
+        background-size: cover;
+        background-position: center center;
+
+        @include mediasm{
+            height: 70vh;
+        }
+        
+        @include mediamd{
+            height: 80vh;
+            background-attachment: fixed;
+            background-position: 60% 15%;
+        }
 
         #first_img{
-            width: 100%;
-            height: 55vh;
-            background-image: url(https://steemitimages.com/p/62PdCouTvNPDiCnjgoQXRxyJDrzuLR4KbVsRymyPFoZWoSyLehvDA1DhHCw2wKXGrHNtQgwePtGMMHQiWr8Z1BiBTj5szB6G3NzwcG7HX6nmTeE?format=match&mode=fit&width=640);
-            background-size: cover;
-            background-position: center center;
+            // width: 100;
+            background: rgba(50, 50, 50, 0.5);
+            height: 100%;
             display: flex;
+            justify-content: flex-start;
             align-items: center;
 
             h1{
@@ -96,18 +111,8 @@ body{
                 color: white;
                 margin: 0;
                 padding: 1rem 1.5rem;
-                background: rgba(50, 50, 50, 0.5)
             } // text that hovers img
 
-            @include mediasm{
-                height: 70vh;
-            }
-            
-            @include mediamd{
-                height: 85vh;
-                background-attachment: fixed;
-                background-position: 60% 15%;
-            }
         }
     } //header ENDS
 } // body END
@@ -118,27 +123,43 @@ main{
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: skyblue;
+        background: rgb(37,32,33);
+        background: linear-gradient(180deg, rgba(37,32,33,1) -390%, rgba(187,210,244,1) 30%, 
+        rgba(201,219,246,1) 100%);
         padding: 1rem;
 
         @include mediamd{
+            height: 300px;
             flex-direction: row;
             justify-content: space-around;
         } // MEDIA CHANGES WITHIN ID'S BELOW AS WELL
 
         #about_us_text{
-            color: white;
+            color: #284A70;
             width: 95%;
-            margin: 3rem 0;
+            margin: 1rem auto 2rem;
+            max-width: 500px;
 
             @include mediamd{
                 width: 40%;
+            }
+
+            h2{
+                margin-top: 0;
+                padding: 0;
+            }
+
+            p{
+                padding-right: 3rem;
+                line-height: 1.25;
             }
         } //about us text ENDS
 
         #about_us_imgs{
             width: 95%;
             position: relative;
+            margin: 0 auto;
+            max-width: 500px;
 
             @include mediamd{
                 width: 40%;
@@ -162,15 +183,16 @@ main{
 
         @include mediamd{
             flex-direction: row-reverse;
+            height: 300px;
         }
 
         #philosophy_text{
             display: flex;
-            height: 500px;
             align-content: center;
             justify-content: center;
             // padding: 0 2rem; made it not 50% width
             flex-direction: column;
+            height: 300px;
 
             h2, p{
                 padding: 0 2rem;
@@ -178,6 +200,7 @@ main{
 
             @include mediamd{
                 width: 50%;
+                height: 100%;
             }
         } //philosophy text ENDS
 
@@ -185,7 +208,7 @@ main{
             // background-image: url(https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/44846030_2155940904722936_8819220184146378752_n.jpg?_nc_cat=101&_nc_oc=AQlIBJcpRVTNJTGCxkgmH8mMcfkw5UexkxvwRnkCn-U6Y9pAw377iTgrlFXTwLZHUZY&_nc_ht=scontent-lga3-1.xx&oh=1c448beb39f23ecb0ad5b5caa54f9e0e&oe=5E31D957);
             // background-size: cover;
             // background-position: center center;
-            height: 500px;
+            height: 300px;
 
             img{
                display: block; 
@@ -196,7 +219,8 @@ main{
             }
 
             @include mediamd{
-                width: 50%;
+                width: 50%; 
+                height: 100%;
             }
         } //philosophy img ENDS
     } // philosophy ENDS
@@ -208,15 +232,16 @@ main{
         width: 100%;
 
         @include mediamd{
+            height: 300px;
             flex-direction: row;
         }
 
         #lorem_ip_text{
             display: flex;
-            height: 500px;
             align-content: center;
             justify-content: center;
             flex-direction: column;
+            height: 300px;
 
             h2, p{
                 padding: 0 2rem;
@@ -224,6 +249,7 @@ main{
 
             @include mediamd{
                 width: 50%;
+                height: 100%;
             }
         } //lorem_ip text ENDS
 
@@ -231,7 +257,7 @@ main{
             // background-image: url(https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/44846030_2155940904722936_8819220184146378752_n.jpg?_nc_cat=101&_nc_oc=AQlIBJcpRVTNJTGCxkgmH8mMcfkw5UexkxvwRnkCn-U6Y9pAw377iTgrlFXTwLZHUZY&_nc_ht=scontent-lga3-1.xx&oh=1c448beb39f23ecb0ad5b5caa54f9e0e&oe=5E31D957);
             // background-size: cover;
             // background-position: center center;
-            height: 500px;
+            height: 300px;
 
             img{
                display: block; 
@@ -243,6 +269,7 @@ main{
 
             @include mediamd{
                 width: 50%;
+                height: 100%;
             }
         } //lorem_ip img ENDS
     }// lorem_ip ENDS
@@ -392,12 +419,19 @@ main{
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-
+        height: 40vh;
+        
+        @include mediasm{
+            height: 50vh;
+        }
+        
         @include mediamd{
+            height: 60vh;
             background-attachment: fixed;
         }
 
         article{
+            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;

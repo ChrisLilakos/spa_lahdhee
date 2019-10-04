@@ -45,9 +45,11 @@ $main_blue: #b4cbed;
 
 .reserve_cta{
 // THE COMMON CTA BUTTON
-    border: 3px $main_blue solid;
+    border: 3px #4b7a9c solid;
+    // border: 3px $main_blue solid;
     color: white;
-    background: $main_blue;
+    background: #4b7a9c;
+    // background: $main_blue;
     // width: 10rem;
     // min-height: 5rem;
     font-weight: bold;
@@ -59,8 +61,10 @@ $main_blue: #b4cbed;
     &:hover{
         // border-color: $main_green;
         // color: $main_green;
-        color: $main_blue;
-        border-color: $main_blue;
+        // border-color: $main_blue;
+        // color: $main_blue;
+        color: #4b7a9c;
+        border-color: #4b7a9c;
         background: white;
     }
 
@@ -473,6 +477,7 @@ body{
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
+                    font-family: 'Nunito', sans-serif;
                 
                     h1{
                         // padding: 1rem 0 .5rem;
@@ -481,16 +486,18 @@ body{
                     }
 
                     h2{
-                        font-size: 175%;
-                        margin: 0;
+                        font-size: 200%;
+                        margin: -1rem 0 -.5rem;
                         // padding: 0 0 .25rem;
                     }
 
                     p{
                         font-weight: 600;
                         // padding: .25rem 2rem 1.5rem;
-                        // margin: 0 auto;
+                        margin: .5rem 0;
                         max-width: 400px;
+                        font-size: 120%;
+                        line-height: 1.2;
                     }
                 }
                 
@@ -516,6 +523,7 @@ body{
                             height: 250px;
                             min-height: 250px;
                             max-height: 250px;
+                            box-shadow: 2px 15px 10px 0px white;
 
                             .pop_serve_outer_in{
                                 // background: $main_blue;
@@ -559,7 +567,7 @@ body{
             // background: white;
             // width: 400px;
             // margin: .5rem auto 0;
-            padding: 0 2rem 1rem;
+            padding: 0 1.5rem 1rem 2rem;
 
 
             @include medialg{
@@ -578,6 +586,8 @@ body{
             #outside_ul{
                 list-style-type: none;
                 padding-left: 1.25rem;
+                padding-left: 0rem;
+                white-space: nowrap;
 
                 li{
 
@@ -592,10 +602,15 @@ body{
                     }
 
                     ul{
-                        list-style-type: disc;
+                        // list-style-type: disc;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-around;
+                        padding-left: 0.5rem;
 
                         li{
-                            margin: .25rem 0;
+                            margin: .25rem 0.5rem 0 0.75rem;
+                            flex: 30%;
 
                             a{
                                 // color: darken($color: $main_green, $amount: 10);
@@ -608,10 +623,19 @@ body{
             }
 
             #outside_outside_ul_atag{
-                margin: 1.75rem auto .5rem;
+                margin: 1.75rem .5rem .5rem auto;
                 display: block;
                 width: 180px;
                 text-align: center;
+                color: white;
+                background: #4b7a9c;
+                border-color: #b4cbed;
+
+                &:hover{
+                    border-color: white;
+                    text-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
+                    // color: white;
+                }
             }
         }
 
@@ -623,17 +647,19 @@ main{
 
     #massage_services_section{
         background: rgb(74,123,159);
-        background: linear-gradient(180deg, rgba(74,123,159,1) 0%, rgba(201,219,246,1) 70%); 
+        background: linear-gradient(180deg, rgba(74,123,159,1) 0%, rgba(201,219,246,1) 70%, rgba(255,255,255,1)); 
         // Check Classes up top to see more 
         // of how the elements were affected
+        
 
         h2{
             // color: $main_green;
             color: white;
-            font-size: 200%;
+            font-size: 250%;
             padding: 3rem 0 1rem 3rem;
             margin: 0;
             text-decoration: underline;
+            font-family: 'Nunito', sans-serif;
         }
 
         // .pop_service inside here but not really doe
@@ -653,9 +679,9 @@ main{
 
         h3{
             font-size: 150%;
+            margin-bottom: 0;
             // color: $main_green;
             color: #4b7a9c;
-            margin-bottom: 0;
             padding: 0;
             text-transform: capitalize;
 
@@ -663,9 +689,17 @@ main{
             // the continue scrollling under the cards
                 padding: 0 1rem;
                 text-align: center;
+                margin: 1rem auto 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 // line-height: 2;
 
-                span{
+                span:first-of-type{
+                    line-height: 0.5;
+                }
+
+                span:last-of-type{
                     line-height: 2.5;
                     // margin-bottom: -1rem;
                 }
@@ -679,19 +713,20 @@ main{
     } //end of # pop serve section
 
     #package_promo_section{
-        background: rgb(201,219,246);
-        background: linear-gradient(180deg, rgba(201,219,246,1) 0%, rgba(255,255,255,1) 100%); 
+        // background: rgb(201,219,246);
+        // background: linear-gradient(180deg, rgba(201,219,246,1) 0%, rgba(255,255,255,1) 100%); 
         // background: linear-gradient(180deg, rgba(201,219,246,1) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 50%, rgba(187,210,244,1) 65%, rgba(74,123,159,1) 85%, rgba(12,26,48,1) 100%); 
-
+        background: white;
 
 
         #promo_h2{
             // color: $main_green;
             color: #4b7a9c;
-            font-size: 200%;
+            font-size: 250%;
             padding: 3rem 0 1rem 3rem;
             margin: 0;
             text-decoration: underline;
+            font-family: 'Nunito', sans-serif;
         }
 
         #package_promo_div{

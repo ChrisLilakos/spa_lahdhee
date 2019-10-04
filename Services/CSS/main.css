@@ -1,7 +1,7 @@
 .reserve_cta {
-  border: 3px #b4cbed solid;
+  border: 3px #4b7a9c solid;
   color: white;
-  background: #b4cbed;
+  background: #4b7a9c;
   font-weight: bold;
   text-decoration: none;
   padding: .75rem 1rem;
@@ -10,8 +10,8 @@
 }
 
 .reserve_cta:hover {
-  color: #b4cbed;
-  border-color: #b4cbed;
+  color: #4b7a9c;
+  border-color: #4b7a9c;
   background: white;
 }
 
@@ -483,6 +483,7 @@ body header #opening_section #opening_article #opening_content {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-family: 'Nunito', sans-serif;
 }
 
 body header #opening_section #opening_article #opening_content h1 {
@@ -491,13 +492,16 @@ body header #opening_section #opening_article #opening_content h1 {
 }
 
 body header #opening_section #opening_article #opening_content h2 {
-  font-size: 175%;
-  margin: 0;
+  font-size: 200%;
+  margin: -1rem 0 -.5rem;
 }
 
 body header #opening_section #opening_article #opening_content p {
   font-weight: 600;
+  margin: .5rem 0;
   max-width: 400px;
+  font-size: 120%;
+  line-height: 1.2;
 }
 
 body header #opening_section #opening_article #sample_card {
@@ -527,6 +531,8 @@ body header #opening_section #opening_article #sample_card {
     height: 250px;
     min-height: 250px;
     max-height: 250px;
+    -webkit-box-shadow: 2px 15px 10px 0px white;
+            box-shadow: 2px 15px 10px 0px white;
   }
   body header #opening_section #opening_article #sample_card .pop_service .pop_serve_outer_in {
     background: #4b7a9c;
@@ -555,7 +561,7 @@ body header #opening_section #opening_article #sample_card {
 }
 
 body header #mobile_contents_header {
-  padding: 0 2rem 1rem;
+  padding: 0 1.5rem 1rem 2rem;
 }
 
 @media (min-width: 992px) {
@@ -575,6 +581,8 @@ body header #mobile_contents_header h2 {
 body header #mobile_contents_header #outside_ul {
   list-style-type: none;
   padding-left: 1.25rem;
+  padding-left: 0rem;
+  white-space: nowrap;
 }
 
 body header #mobile_contents_header #outside_ul li h3 a {
@@ -583,11 +591,21 @@ body header #mobile_contents_header #outside_ul li h3 a {
 }
 
 body header #mobile_contents_header #outside_ul li ul {
-  list-style-type: disc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-left: 0.5rem;
 }
 
 body header #mobile_contents_header #outside_ul li ul li {
-  margin: .25rem 0;
+  margin: .25rem 0.5rem 0 0.75rem;
+  -webkit-box-flex: 30%;
+      -ms-flex: 30%;
+          flex: 30%;
 }
 
 body header #mobile_contents_header #outside_ul li ul li a {
@@ -596,24 +614,33 @@ body header #mobile_contents_header #outside_ul li ul li a {
 }
 
 body header #mobile_contents_header #outside_outside_ul_atag {
-  margin: 1.75rem auto .5rem;
+  margin: 1.75rem .5rem .5rem auto;
   display: block;
   width: 180px;
   text-align: center;
+  color: white;
+  background: #4b7a9c;
+  border-color: #b4cbed;
+}
+
+body header #mobile_contents_header #outside_outside_ul_atag:hover {
+  border-color: white;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.4);
 }
 
 main #massage_services_section {
   background: #4a7b9f;
-  background: -webkit-gradient(linear, left top, left bottom, from(#4a7b9f), color-stop(70%, #c9dbf6));
-  background: linear-gradient(180deg, #4a7b9f 0%, #c9dbf6 70%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#4a7b9f), color-stop(70%, #c9dbf6), to(white));
+  background: linear-gradient(180deg, #4a7b9f 0%, #c9dbf6 70%, white);
 }
 
 main #massage_services_section h2 {
   color: white;
-  font-size: 200%;
+  font-size: 250%;
   padding: 3rem 0 1rem 3rem;
   margin: 0;
   text-decoration: underline;
+  font-family: 'Nunito', sans-serif;
 }
 
 main #massage_services_section #massage_services_div {
@@ -641,8 +668,8 @@ main #massage_services_section #massage_services_div {
 
 main #massage_services_section h3 {
   font-size: 150%;
-  color: #4b7a9c;
   margin-bottom: 0;
+  color: #4b7a9c;
   padding: 0;
   text-transform: capitalize;
 }
@@ -650,9 +677,24 @@ main #massage_services_section h3 {
 main #massage_services_section h3:last-child {
   padding: 0 1rem;
   text-align: center;
+  margin: 1rem auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-main #massage_services_section h3:last-child span {
+main #massage_services_section h3:last-child span:first-of-type {
+  line-height: 0.5;
+}
+
+main #massage_services_section h3:last-child span:last-of-type {
   line-height: 2.5;
 }
 
@@ -662,17 +704,16 @@ main #massage_services_section h3 a {
 }
 
 main #package_promo_section {
-  background: #c9dbf6;
-  background: -webkit-gradient(linear, left top, left bottom, from(#c9dbf6), to(white));
-  background: linear-gradient(180deg, #c9dbf6 0%, white 100%);
+  background: white;
 }
 
 main #package_promo_section #promo_h2 {
   color: #4b7a9c;
-  font-size: 200%;
+  font-size: 250%;
   padding: 3rem 0 1rem 3rem;
   margin: 0;
   text-decoration: underline;
+  font-family: 'Nunito', sans-serif;
 }
 
 main #package_promo_section #package_promo_div {

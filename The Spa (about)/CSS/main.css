@@ -27,21 +27,44 @@ body {
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   min-width: 390px;
+  overflow-x: hidden;
 }
 
 body h2 {
   text-transform: capitalize;
 }
 
-body header #first_img {
+body header {
   width: 100%;
   height: 55vh;
   background-image: url(https://steemitimages.com/p/62PdCouTvNPDiCnjgoQXRxyJDrzuLR4KbVsRymyPFoZWoSyLehvDA1DhHCw2wKXGrHNtQgwePtGMMHQiWr8Z1BiBTj5szB6G3NzwcG7HX6nmTeE?format=match&mode=fit&width=640);
   background-size: cover;
   background-position: center center;
+}
+
+@media (min-width: 576px) {
+  body header {
+    height: 70vh;
+  }
+}
+
+@media (min-width: 768px) {
+  body header {
+    height: 80vh;
+    background-attachment: fixed;
+    background-position: 60% 15%;
+  }
+}
+
+body header #first_img {
+  background: rgba(50, 50, 50, 0.5);
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -52,21 +75,6 @@ body header #first_img h1 {
   color: white;
   margin: 0;
   padding: 1rem 1.5rem;
-  background: rgba(50, 50, 50, 0.5);
-}
-
-@media (min-width: 576px) {
-  body header #first_img {
-    height: 70vh;
-  }
-}
-
-@media (min-width: 768px) {
-  body header #first_img {
-    height: 85vh;
-    background-attachment: fixed;
-    background-position: 60% 15%;
-  }
 }
 
 main #about_us_section {
@@ -80,12 +88,15 @@ main #about_us_section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: skyblue;
+  background: #252021;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(-390%, #252021), color-stop(30%, #bbd2f4), to(#c9dbf6));
+  background: linear-gradient(180deg, #252021 -390%, #bbd2f4 30%, #c9dbf6 100%);
   padding: 1rem;
 }
 
 @media (min-width: 768px) {
   main #about_us_section {
+    height: 300px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -96,9 +107,10 @@ main #about_us_section {
 }
 
 main #about_us_section #about_us_text {
-  color: white;
+  color: #284A70;
   width: 95%;
-  margin: 3rem 0;
+  margin: 1rem auto 2rem;
+  max-width: 500px;
 }
 
 @media (min-width: 768px) {
@@ -107,9 +119,21 @@ main #about_us_section #about_us_text {
   }
 }
 
+main #about_us_section #about_us_text h2 {
+  margin-top: 0;
+  padding: 0;
+}
+
+main #about_us_section #about_us_text p {
+  padding-right: 3rem;
+  line-height: 1.25;
+}
+
 main #about_us_section #about_us_imgs {
   width: 95%;
   position: relative;
+  margin: 0 auto;
+  max-width: 500px;
 }
 
 @media (min-width: 768px) {
@@ -145,6 +169,7 @@ main #philosophy_section {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+    height: 300px;
   }
 }
 
@@ -152,7 +177,6 @@ main #philosophy_section #philosophy_text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 500px;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-pack: center;
@@ -162,6 +186,7 @@ main #philosophy_section #philosophy_text {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 300px;
 }
 
 main #philosophy_section #philosophy_text h2, main #philosophy_section #philosophy_text p {
@@ -171,11 +196,12 @@ main #philosophy_section #philosophy_text h2, main #philosophy_section #philosop
 @media (min-width: 768px) {
   main #philosophy_section #philosophy_text {
     width: 50%;
+    height: 100%;
   }
 }
 
 main #philosophy_section #philosophy_img {
-  height: 500px;
+  height: 300px;
 }
 
 main #philosophy_section #philosophy_img img {
@@ -191,6 +217,7 @@ main #philosophy_section #philosophy_img img {
 @media (min-width: 768px) {
   main #philosophy_section #philosophy_img {
     width: 50%;
+    height: 100%;
   }
 }
 
@@ -208,6 +235,7 @@ main #lorem_ip_section {
 
 @media (min-width: 768px) {
   main #lorem_ip_section {
+    height: 300px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -219,7 +247,6 @@ main #lorem_ip_section #lorem_ip_text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 500px;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-pack: center;
@@ -229,6 +256,7 @@ main #lorem_ip_section #lorem_ip_text {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 300px;
 }
 
 main #lorem_ip_section #lorem_ip_text h2, main #lorem_ip_section #lorem_ip_text p {
@@ -238,11 +266,12 @@ main #lorem_ip_section #lorem_ip_text h2, main #lorem_ip_section #lorem_ip_text 
 @media (min-width: 768px) {
   main #lorem_ip_section #lorem_ip_text {
     width: 50%;
+    height: 100%;
   }
 }
 
 main #lorem_ip_section #lorem_ip_img {
-  height: 500px;
+  height: 300px;
 }
 
 main #lorem_ip_section #lorem_ip_img img {
@@ -258,6 +287,7 @@ main #lorem_ip_section #lorem_ip_img img {
 @media (min-width: 768px) {
   main #lorem_ip_section #lorem_ip_img {
     width: 50%;
+    height: 100%;
   }
 }
 
@@ -409,15 +439,24 @@ main #final_cta_section {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  height: 40vh;
+}
+
+@media (min-width: 576px) {
+  main #final_cta_section {
+    height: 50vh;
+  }
 }
 
 @media (min-width: 768px) {
   main #final_cta_section {
+    height: 60vh;
     background-attachment: fixed;
   }
 }
 
 main #final_cta_section article {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
