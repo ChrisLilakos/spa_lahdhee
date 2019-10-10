@@ -71,10 +71,9 @@ $main_blue: #b4cbed;
 } // THE COMMON CTA BUTTON
 // more editing in various places
 
+
 .pop_service{
     // the popular service cards
-    display: flex;
-    flex-direction: column;
     width: 80%;
     max-width: 450px;
     min-width: 300px;
@@ -88,52 +87,61 @@ $main_blue: #b4cbed;
     min-height: 500px;
     max-height: 500px;
 
-    img{
-        display: block;
-        width: 100%;
-        border-top-left-radius: .5rem;
-        border-top-right-radius: .5rem;
-        height: 40%;
-        min-height: 40%;
-        max-height: 40%;
-    }
-
-    .pop_serve_outer_in{
-    // Div for non-img part of service
-        height: 60%;
-        min-height: 60%;
-        max-height: 60%;        
+    .pop_serve_front{
         display: flex;
         flex-direction: column;
-        height: 100%;
-        padding: 1rem;
-        color: white;
 
-            h3{
-                text-align: left;
-                margin-top: 0;
-                margin-bottom: .5rem;
-                color: white !important;
-            }
+        img{
+            display: block;
+            width: 100%;
+            border-top-left-radius: .5rem;
+            border-top-right-radius: .5rem;
+            height: 40%;
+            min-height: 40%;
+            max-height: 40%;
+        }
 
-            small{
-                text-align: left;
-                font-size: 90%;
-            }
+        .pop_serve_outer_in{
+        // Div for non-img part of service
+            height: 60%;
+            min-height: 60%;
+            max-height: 60%;        
+            display: flex;
+            flex-direction: column;
+            // height: 100%;
+            padding: 1rem;
+            color: white;
 
-            p{
-                text-align: left;
-                text-overflow: ellipsis;
-            }
+                h3{
+                    text-align: left;
+                    margin-top: 0;
+                    margin-bottom: .5rem;
+                    color: white !important;
+                }
 
-            h4{
-                margin:auto 0 2rem auto;
-                align-self: flex-end;
-                color: lighten($color: $main_blue, $amount: 15);
-                // font-size: 120%;
-            }
-        // }
-    } // End of outer div
+                small{
+                    text-align: left;
+                    font-size: 90%;
+                }
+
+                p{
+                    text-align: left;
+                    text-overflow: ellipsis;
+                }
+
+                h4{
+                    margin:auto 0 2rem auto;
+                    align-self: flex-end;
+                    color: lighten($color: $main_blue, $amount: 15);
+                    // font-size: 120%;
+                }
+            // }
+        } // End of outer div
+    }
+
+    .pop_serve_back{
+        display: none;
+    }
 
     &:last-child{
         grid-column: 1 / -1;
@@ -525,33 +533,43 @@ body{
                             max-height: 250px;
                             box-shadow: 2px 15px 10px 0px white;
 
-                            .pop_serve_outer_in{
-                                // background: $main_blue;
-                                background: #4b7a9c;
-                                border-bottom-right-radius: 1rem;
-                                border-bottom-left-radius: 1rem;
-                                color: white !important;
-                                padding: .5rem;
+                            .pop_serve_front{
+                                height: 100%;
+                                max-height: 100%;
 
-                                h3{
-                                    font-size: 125%;
-                                    margin: 0;
+                                img{
+                                    height: 45%;
                                 }
 
-                                small{
-                                    font-size: 75%;
-                                    margin: .25rem;
-                                }
+                                .pop_serve_outer_in{
+                                    // background: $main_blue;
+                                    background: #4b7a9c;
+                                    border-bottom-right-radius: 1rem;
+                                    border-bottom-left-radius: 1rem;
+                                    color: white !important;
+                                    padding: .5rem;
+                                    height: 55%;
 
-                                p{
-                                    font-size: 80%;
-                                    margin: 0;
-                                    padding: 0.25rem 0.25rem 0 .25rem;
-                                }
+                                    h3{
+                                        font-size: 125%;
+                                        margin: 0;
+                                    }
 
-                                h4{
-                                    margin: auto .5rem 1rem auto;
-                                    font-size: 125%;
+                                    small{
+                                        font-size: 75%;
+                                        margin: .25rem;
+                                    }
+
+                                    p{
+                                        font-size: 80%;
+                                        margin: 0;
+                                        padding: 0.25rem 0.25rem 0 .25rem;
+                                    }
+
+                                    h4{
+                                        margin: auto .5rem 1rem auto;
+                                        font-size: 125%;
+                                    }
                                 }
                             }
                         }
@@ -693,6 +711,7 @@ main{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                font-family: "mina", sans-serif;
                 // line-height: 2;
 
                 span:first-of-type{
@@ -708,6 +727,9 @@ main{
             a{
                 margin-bottom: 3rem;
                 margin-top: -.5rem;
+                font-size: 110%;
+                line-height: 1;
+                padding: .75rem 1.25rem .5rem;
             }
         } //end of h3
     } //end of # pop serve section

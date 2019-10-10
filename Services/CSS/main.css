@@ -16,13 +16,6 @@
 }
 
 .pop_service {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   width: 80%;
   max-width: 450px;
   min-width: 300px;
@@ -37,7 +30,17 @@
   max-height: 500px;
 }
 
-.pop_service img {
+.pop_service .pop_serve_front {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.pop_service .pop_serve_front img {
   display: block;
   width: 100%;
   border-top-left-radius: .5rem;
@@ -47,7 +50,7 @@
   max-height: 40%;
 }
 
-.pop_service .pop_serve_outer_in {
+.pop_service .pop_serve_front .pop_serve_outer_in {
   height: 60%;
   min-height: 60%;
   max-height: 60%;
@@ -58,33 +61,36 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%;
   padding: 1rem;
   color: white;
 }
 
-.pop_service .pop_serve_outer_in h3 {
+.pop_service .pop_serve_front .pop_serve_outer_in h3 {
   text-align: left;
   margin-top: 0;
   margin-bottom: .5rem;
   color: white !important;
 }
 
-.pop_service .pop_serve_outer_in small {
+.pop_service .pop_serve_front .pop_serve_outer_in small {
   text-align: left;
   font-size: 90%;
 }
 
-.pop_service .pop_serve_outer_in p {
+.pop_service .pop_serve_front .pop_serve_outer_in p {
   text-align: left;
   text-overflow: ellipsis;
 }
 
-.pop_service .pop_serve_outer_in h4 {
+.pop_service .pop_serve_front .pop_serve_outer_in h4 {
   margin: auto 0 2rem auto;
   -ms-flex-item-align: end;
       align-self: flex-end;
   color: #f2f6fc;
+}
+
+.pop_service .pop_serve_back {
+  display: none;
 }
 
 .pop_service:last-child {
@@ -534,27 +540,35 @@ body header #opening_section #opening_article #sample_card {
     -webkit-box-shadow: 2px 15px 10px 0px white;
             box-shadow: 2px 15px 10px 0px white;
   }
-  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_outer_in {
+  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_front {
+    height: 100%;
+    max-height: 100%;
+  }
+  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_front img {
+    height: 45%;
+  }
+  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_front .pop_serve_outer_in {
     background: #4b7a9c;
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
     color: white !important;
     padding: .5rem;
+    height: 55%;
   }
-  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_outer_in h3 {
+  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_front .pop_serve_outer_in h3 {
     font-size: 125%;
     margin: 0;
   }
-  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_outer_in small {
+  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_front .pop_serve_outer_in small {
     font-size: 75%;
     margin: .25rem;
   }
-  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_outer_in p {
+  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_front .pop_serve_outer_in p {
     font-size: 80%;
     margin: 0;
     padding: 0.25rem 0.25rem 0 .25rem;
   }
-  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_outer_in h4 {
+  body header #opening_section #opening_article #sample_card .pop_service .pop_serve_front .pop_serve_outer_in h4 {
     margin: auto .5rem 1rem auto;
     font-size: 125%;
   }
@@ -688,6 +702,7 @@ main #massage_services_section h3:last-child {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: "mina", sans-serif;
 }
 
 main #massage_services_section h3:last-child span:first-of-type {
@@ -701,6 +716,9 @@ main #massage_services_section h3:last-child span:last-of-type {
 main #massage_services_section h3 a {
   margin-bottom: 3rem;
   margin-top: -.5rem;
+  font-size: 110%;
+  line-height: 1;
+  padding: .75rem 1.25rem .5rem;
 }
 
 main #package_promo_section {
