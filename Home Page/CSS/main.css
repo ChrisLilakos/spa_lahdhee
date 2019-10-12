@@ -254,6 +254,22 @@
   color: #76af8f;
 }
 
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 1.5rem .5rem 0;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease;
+}
+
+.dot:hover {
+  background-color: #717171;
+}
+
 .logo_container {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -454,7 +470,7 @@ body nav #hamburger_section #hamburger {
   padding: 1rem;
   height: 1rem;
   width: 1rem;
-  color: #f2d4b6;
+  color: #4b7a9c;
   font-size: 2rem;
   margin-left: 1rem;
 }
@@ -624,17 +640,15 @@ body nav #cta_nav_section {
 }
 
 body nav #cta_nav_section a {
-  background: transparent;
-  border: white solid 1px;
+  border-color: transparent;
+  background: #003DF5;
   white-space: nowrap;
 }
 
 body nav #cta_nav_section a:hover {
-  -webkit-text-decoration: underline solid currentColor 1px;
-          text-decoration: underline solid currentColor 1px;
-  -webkit-box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.8);
-          box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.8);
-  color: white !important;
+  color: #003DF5;
+  border-color: #003DF5;
+  background: transparent;
 }
 
 @media (min-width: 576px) {
@@ -698,15 +712,15 @@ main {
 
 main #opening_section {
   background: #c9dbf6;
-  background: -webkit-gradient(linear, left top, left bottom, from(#c9dbf6), color-stop(55%, #bbd2f4), color-stop(200%, #4a7b9f));
-  background: linear-gradient(180deg, #c9dbf6 0%, #bbd2f4 55%, #4a7b9f 200%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#c9dbf6), color-stop(55%, #bbd2f4), to(#D7E3EF));
+  background: linear-gradient(180deg, #c9dbf6 0%, #bbd2f4 55%, #D7E3EF 100%);
   padding: 1.75rem 0 2.75rem 0;
 }
 
 main #opening_section h2 {
   text-transform: capitalize;
   margin: 0;
-  color: #0b61dd;
+  color: #0342A0;
   font-weight: 200;
   padding: 2rem;
   padding-bottom: 0;
@@ -740,6 +754,22 @@ main #opening_section h2 span {
   }
 }
 
+main #opening_section p {
+  padding: 2rem;
+  max-width: 576px;
+  margin: 0 auto;
+  color: #0342A0;
+  font-size: 125%;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+}
+
+@media (min-width: 576px) {
+  main #opening_section p {
+    font-size: 150%;
+  }
+}
+
 main #opening_section .reserve_cta {
   border-color: transparent;
   background: #003DF5;
@@ -753,22 +783,6 @@ main #opening_section .reserve_cta:hover {
   -webkit-box-shadow: none;
           box-shadow: none;
   border-color: #003DF5;
-}
-
-main #opening_section p {
-  padding: 2rem;
-  max-width: 576px;
-  margin: 0 auto;
-  color: #054fb9;
-  font-size: 125%;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.4;
-}
-
-@media (min-width: 576px) {
-  main #opening_section p {
-    font-size: 150%;
-  }
 }
 
 main #benefit_overlay {
@@ -932,7 +946,7 @@ main #about_us_section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #5ECBFF;
+  background: #bbd2f4;
   padding: 1rem;
 }
 
@@ -988,6 +1002,16 @@ main #about_us_section #about_us_imgs {
   position: relative;
   margin: 0 auto;
   max-width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -1006,9 +1030,9 @@ main #about_us_section #about_us_imgs img {
 }
 
 main #pop_services_section {
-  background: #5ecbff;
-  background: -webkit-gradient(linear, left top, left bottom, from(#5ecbff), color-stop(30%, white));
-  background: linear-gradient(180deg, #5ecbff 0%, white 30%);
+  background: #bbd2f4;
+  background: -webkit-gradient(linear, left top, left bottom, from(#bbd2f4), color-stop(30%, white));
+  background: linear-gradient(180deg, #bbd2f4 0%, white 30%);
 }
 
 main #pop_services_section h2 {
@@ -1016,7 +1040,7 @@ main #pop_services_section h2 {
   font-family: 'Kaushan Script', sans-serif;
   font-size: 300%;
   margin: 0;
-  padding: 2rem 0;
+  padding: 2rem 1.5rem;
 }
 
 main #pop_services_section .pop_services_div {
@@ -1485,6 +1509,10 @@ footer #main_footer_section #footer_connect .social_icons {
 
 footer #main_footer_section #footer_connect .social_icons a:first-child {
   margin-left: 0;
+}
+
+footer #main_footer_section #footer_connect .social_icons a svg:hover {
+  color: #508ee4;
 }
 
 footer #main_footer_section #pop_footures {

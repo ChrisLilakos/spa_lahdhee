@@ -433,6 +433,21 @@ $main_blue: #b4cbed;
 } // end social icons
 // more editing in various places
 
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 1.5rem .5rem 0;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+
+    &:hover{
+        background-color: #717171;
+    }
+  }
+
 // .logo_pic{ 
 // // a tag with h1 in it for nav
 //     background: url(https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/12804727_1565271077123258_7939033995396338047_n.jpg?_nc_cat=110&_nc_oc=AQn6PnblnouAnZae6NZqkLh-OhpJw_00dBqrd-cAe365B459kF-jc4MOi-L_c59raig&_nc_ht=scontent-lga3-1.xx&oh=edebce218864ca230fd30f38addd59a6&oe=5DF7C4B2);
@@ -629,7 +644,8 @@ body{
                 padding: 1rem;
                 height: 1rem;
                 width: 1rem; 
-                color: #f2d4b6;
+                // color: #f2d4b6;
+                color: #4b7a9c;
                 font-size: 2rem;
                 margin-left: 1rem;
 
@@ -793,14 +809,19 @@ body{
             display: none;
 
             a{
-                background: transparent;
-                border: white solid 1px;
+                // background: transparent;
+                // border: white solid 1px;
+                border-color: transparent;
+                background: #003DF5;
                 white-space: nowrap;
 
                 &:hover{
-                    text-decoration: underline solid currentColor 1px;
-                    box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.8);
-                    color: white !important;
+                    // text-decoration: underline solid currentColor 1px;
+                    // box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.8);
+                    // color: white !important;
+                    color: #003DF5;
+                    border-color: #003DF5;
+                    background: transparent;
                 }
             }
 
@@ -867,7 +888,8 @@ main{
         // background: linear-gradient(180deg, rgba(255, 237, 164, 0.6) 0%, #f2d4b6 30%, #bbd2f4 80%);
         background: rgb(201,219,246);
         // background: linear-gradient(180deg, rgba(201,219,246,1) 0%, rgba(187,210,244,1) 35%, rgba(74,123,159,1) 75%, rgba(44,74,94,1) 100%); 
-        background: linear-gradient(180deg, #c9dbf6 0%, #bbd2f4 55%, #4a7b9f 200%);
+        // background: linear-gradient(180deg, #c9dbf6 0%, #bbd2f4 55%, #4a7b9f 200%);
+        background: linear-gradient(180deg, #c9dbf6 0%, #bbd2f4 55%, #D7E3EF 100%);
         // padding-bottom: 2.75rem;
         padding: 1.75rem 0 2.75rem 0;
 
@@ -876,7 +898,8 @@ main{
             margin: 0;
             // color: darken($color: #bbd2f4, $amount: 10);
             // color: #0a2e62;
-            color: #0b61dd;
+            // color: #0b61dd;
+            color: #0342A0;
             font-weight: 200;
             padding: 2rem;
             padding-bottom: 0;
@@ -903,6 +926,24 @@ main{
                 }
             } //span
         } //h2
+
+        p{
+            padding: 2rem;
+            max-width: $mediaqsm;
+            margin: 0 auto;
+            // color: darken($color: saturate($color: $main_blue, $amount: 30), $amount: 50);
+            // color: #4a7b9f;
+            // color: #0a2e62;
+            // color: #054fb9;
+            color: #0342A0;
+            font-size: 125%;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.4;
+
+            @include mediasm{
+                font-size: 150%;
+            }
+        } // p ended
 
         .reserve_cta{
             // background: saturate($color: $main_green, $amount: 20);
@@ -932,22 +973,6 @@ main{
             }
         }
 
-        p{
-            padding: 2rem;
-            max-width: $mediaqsm;
-            margin: 0 auto;
-            // color: darken($color: saturate($color: $main_blue, $amount: 30), $amount: 50);
-            // color: #4a7b9f;
-            // color: #0a2e62;
-            color: #054fb9;
-            font-size: 125%;
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.4;
-
-            @include mediasm{
-                font-size: 150%;
-            }
-        } // p ended
     } //end of #opening section
 
     #benefit_overlay{
@@ -1104,7 +1129,8 @@ main{
         // background: linear-gradient(180deg, rgba(37,32,33,1) -390%, rgba(187,210,244,1) 30%, 
         // rgba(201,219,246,1) 100%);
         // background: #00A6F5;
-        background: #5ECBFF;
+        // background: #5ECBFF;
+        background: #bbd2f4;
         padding: 1rem;
 
         @include mediamd{
@@ -1151,6 +1177,9 @@ main{
             position: relative;
             margin: 0 auto;
             max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
             @include mediamd{
                 width: 45%;
@@ -1169,8 +1198,10 @@ main{
     #pop_services_section{
         // background: rgb(187,210,244);
         // background: linear-gradient(180deg, rgba(187,210,244,1) 0%, rgba(255,255,255,1) 50%); 
-        background: rgb(94,203,255);
-        background: linear-gradient(180deg, rgba(94,203,255,1) 0%, /* rgba(201,219,246,1) 15%,*/ rgba(255,255,255,1) 30%); 
+        // background: rgb(94, 204, 255);
+        background: rgb(187, 210, 244);
+        // background: linear-gradient(180deg, rgba(94,203,255,1) 0%, /* rgba(201,219,246,1) 15%,*/ rgba(255,255,255,1) 30%); 
+        background: linear-gradient(180deg, rgba(187, 210, 244, 1) 0%, /* rgba(201,219,246,1) 15%,*/ rgba(255,255,255,1) 30%); 
         // Check Classes up top to see more 
         // of how the elements were affected
 
@@ -1181,7 +1212,7 @@ main{
             font-family: 'Kaushan Script', sans-serif;
             font-size: 300%;
             margin: 0;
-            padding: 2rem 0;
+            padding: 2rem 1.5rem;
         }
 
         // .pop_service nested in html but in 
@@ -1750,6 +1781,14 @@ footer{
 
                 a:first-child{
                     margin-left: 0;
+                }
+
+                a{
+                    svg{
+                        &:hover{
+                            color: #508ee4;
+                        }
+                    }
                 }
             }
         } // end of footer connect
